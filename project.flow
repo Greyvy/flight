@@ -1,0 +1,23 @@
+{
+    project : {
+        name : 'empty',
+        version : '1.0.0',
+        author : 'greyvy',
+        app : {
+            name : 'flight',
+            package : 'com.luxeengine.flight'
+        },
+
+        build : {
+            flags : [ '-debug' ],
+            dependencies : {
+                luxe : '*'
+            }
+        },
+
+        files : {
+            assets : 'assets/',
+            index : { path: 'custom_index.html => index.html', template: 'project', not_listed: true }
+        }
+    }
+}
