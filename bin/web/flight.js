@@ -416,9 +416,11 @@ Main.prototype = $extend(luxe_Game.prototype,{
 	}
 	,ready: function() {
 		this.player = new entities_Player({ name : "Player", pos : Luxe.core.screen.get_mid()});
+		var this1 = new phoenix_Vector(120,80,null,null);
+		this.swinger = new entities_Swinger({ name : "Swinger", pos : this1});
 		var tmp = Luxe.camera;
-		var this1 = new phoenix_Vector(this.width,this.height,null,null);
-		tmp.set_size(this1);
+		var this2 = new phoenix_Vector(this.width,this.height,null,null);
+		tmp.set_size(this2);
 		Luxe.camera.shake(12);
 		this.walls = [[Luxe.core.screen.get_w() * 0.125,Luxe.core.screen.get_h() * 0.125,Luxe.core.screen.get_w() * 0.75 - 2,Luxe.core.screen.get_h() * 0.75 - 2],[Luxe.core.screen.get_w() * 0.125 + 9,Luxe.core.screen.get_h() * 0.125 + 9,Luxe.core.screen.get_w() * 0.75 - 18,Luxe.core.screen.get_h() * 0.75 - 18]];
 		var _g = 0;
@@ -451,7 +453,7 @@ Main.prototype = $extend(luxe_Game.prototype,{
 	}
 	,oncollide: function(collisions) {
 		if(collisions.count > 0) {
-			debugger;
+			haxe_Log.trace("collide",{ fileName : "Main.hx", lineNumber : 116, className : "Main", methodName : "oncollide"});
 		}
 	}
 	,update: function(dt) {
@@ -3025,6 +3027,471 @@ entities_Player.prototype = $extend(luxe_Visual.prototype,{
 		luxe_Visual.prototype.ondestroy.call(this);
 	}
 	,__class__: entities_Player
+});
+var entities_Swinger = function(_options) {
+	luxe_Visual.call(this,_options);
+};
+$hxClasses["entities.Swinger"] = entities_Swinger;
+entities_Swinger.__name__ = ["entities","Swinger"];
+entities_Swinger.__super__ = luxe_Visual;
+entities_Swinger.prototype = $extend(luxe_Visual.prototype,{
+	init: function() {
+		this.set_geometry(new phoenix_geometry_Geometry({ batcher : Luxe.renderer.batcher, primitive_type : 4}));
+		var tau = Math.PI * 2;
+		var sides = 32;
+		var piece = tau / sides;
+		var radius = 16;
+		var thickness = 2;
+		var inner_rad = radius - thickness;
+		var _g1 = 0;
+		var _g = sides;
+		while(_g1 < _g) {
+			var i = _g1++;
+			var this1 = new phoenix_Vector(Math.cos(piece * i),Math.sin(piece * i),null,null);
+			var p0 = this1;
+			var this2 = new phoenix_Vector(Math.cos(piece * (i + 1)),Math.sin(piece * (i + 1)),null,null);
+			var p1 = this2;
+			var this3 = new phoenix_Vector(Math.cos(piece * i),Math.sin(piece * i),null,null);
+			var p2 = this3;
+			var this4 = new phoenix_Vector(Math.cos(piece * (i + 1)),Math.sin(piece * (i + 1)),null,null);
+			var p3 = this4;
+			var v = Math.sqrt(p0.x * p0.x + p0.y * p0.y + p0.z * p0.z);
+			if(v != 0) {
+				var _x = p0.x / v;
+				var _y = p0.y / v;
+				var _z = p0.z / v;
+				var prev = p0.ignore_listeners;
+				p0.ignore_listeners = true;
+				p0.x = _x;
+				if(!p0._construct) {
+					if(p0.listen_x != null && !p0.ignore_listeners) {
+						p0.listen_x(_x);
+					}
+				}
+				p0.y = _y;
+				if(!p0._construct) {
+					if(p0.listen_y != null && !p0.ignore_listeners) {
+						p0.listen_y(_y);
+					}
+				}
+				p0.z = _z;
+				if(!p0._construct) {
+					if(p0.listen_z != null && !p0.ignore_listeners) {
+						p0.listen_z(_z);
+					}
+				}
+				p0.ignore_listeners = prev;
+				if(p0.listen_x != null && !p0.ignore_listeners) {
+					p0.listen_x(p0.x);
+				}
+				if(p0.listen_y != null && !p0.ignore_listeners) {
+					p0.listen_y(p0.y);
+				}
+				if(p0.listen_z != null && !p0.ignore_listeners) {
+					p0.listen_z(p0.z);
+				}
+			} else {
+				var prev1 = p0.ignore_listeners;
+				p0.ignore_listeners = true;
+				p0.x = 0;
+				if(!p0._construct) {
+					if(p0.listen_x != null && !p0.ignore_listeners) {
+						p0.listen_x(0);
+					}
+				}
+				p0.y = 0;
+				if(!p0._construct) {
+					if(p0.listen_y != null && !p0.ignore_listeners) {
+						p0.listen_y(0);
+					}
+				}
+				p0.z = 0;
+				if(!p0._construct) {
+					if(p0.listen_z != null && !p0.ignore_listeners) {
+						p0.listen_z(0);
+					}
+				}
+				p0.ignore_listeners = prev1;
+				if(p0.listen_x != null && !p0.ignore_listeners) {
+					p0.listen_x(p0.x);
+				}
+				if(p0.listen_y != null && !p0.ignore_listeners) {
+					p0.listen_y(p0.y);
+				}
+				if(p0.listen_z != null && !p0.ignore_listeners) {
+					p0.listen_z(p0.z);
+				}
+			}
+			var _this = p0;
+			var _x1 = _this.x * radius;
+			var _y1 = _this.y * radius;
+			var _z1 = _this.z * radius;
+			var prev2 = _this.ignore_listeners;
+			_this.ignore_listeners = true;
+			_this.x = _x1;
+			if(!_this._construct) {
+				if(_this.listen_x != null && !_this.ignore_listeners) {
+					_this.listen_x(_x1);
+				}
+			}
+			_this.y = _y1;
+			if(!_this._construct) {
+				if(_this.listen_y != null && !_this.ignore_listeners) {
+					_this.listen_y(_y1);
+				}
+			}
+			_this.z = _z1;
+			if(!_this._construct) {
+				if(_this.listen_z != null && !_this.ignore_listeners) {
+					_this.listen_z(_z1);
+				}
+			}
+			_this.ignore_listeners = prev2;
+			if(_this.listen_x != null && !_this.ignore_listeners) {
+				_this.listen_x(_this.x);
+			}
+			if(_this.listen_y != null && !_this.ignore_listeners) {
+				_this.listen_y(_this.y);
+			}
+			if(_this.listen_z != null && !_this.ignore_listeners) {
+				_this.listen_z(_this.z);
+			}
+			var v1 = Math.sqrt(p1.x * p1.x + p1.y * p1.y + p1.z * p1.z);
+			if(v1 != 0) {
+				var _x2 = p1.x / v1;
+				var _y2 = p1.y / v1;
+				var _z2 = p1.z / v1;
+				var prev3 = p1.ignore_listeners;
+				p1.ignore_listeners = true;
+				p1.x = _x2;
+				if(!p1._construct) {
+					if(p1.listen_x != null && !p1.ignore_listeners) {
+						p1.listen_x(_x2);
+					}
+				}
+				p1.y = _y2;
+				if(!p1._construct) {
+					if(p1.listen_y != null && !p1.ignore_listeners) {
+						p1.listen_y(_y2);
+					}
+				}
+				p1.z = _z2;
+				if(!p1._construct) {
+					if(p1.listen_z != null && !p1.ignore_listeners) {
+						p1.listen_z(_z2);
+					}
+				}
+				p1.ignore_listeners = prev3;
+				if(p1.listen_x != null && !p1.ignore_listeners) {
+					p1.listen_x(p1.x);
+				}
+				if(p1.listen_y != null && !p1.ignore_listeners) {
+					p1.listen_y(p1.y);
+				}
+				if(p1.listen_z != null && !p1.ignore_listeners) {
+					p1.listen_z(p1.z);
+				}
+			} else {
+				var prev4 = p1.ignore_listeners;
+				p1.ignore_listeners = true;
+				p1.x = 0;
+				if(!p1._construct) {
+					if(p1.listen_x != null && !p1.ignore_listeners) {
+						p1.listen_x(0);
+					}
+				}
+				p1.y = 0;
+				if(!p1._construct) {
+					if(p1.listen_y != null && !p1.ignore_listeners) {
+						p1.listen_y(0);
+					}
+				}
+				p1.z = 0;
+				if(!p1._construct) {
+					if(p1.listen_z != null && !p1.ignore_listeners) {
+						p1.listen_z(0);
+					}
+				}
+				p1.ignore_listeners = prev4;
+				if(p1.listen_x != null && !p1.ignore_listeners) {
+					p1.listen_x(p1.x);
+				}
+				if(p1.listen_y != null && !p1.ignore_listeners) {
+					p1.listen_y(p1.y);
+				}
+				if(p1.listen_z != null && !p1.ignore_listeners) {
+					p1.listen_z(p1.z);
+				}
+			}
+			var _this1 = p1;
+			var _x3 = _this1.x * radius;
+			var _y3 = _this1.y * radius;
+			var _z3 = _this1.z * radius;
+			var prev5 = _this1.ignore_listeners;
+			_this1.ignore_listeners = true;
+			_this1.x = _x3;
+			if(!_this1._construct) {
+				if(_this1.listen_x != null && !_this1.ignore_listeners) {
+					_this1.listen_x(_x3);
+				}
+			}
+			_this1.y = _y3;
+			if(!_this1._construct) {
+				if(_this1.listen_y != null && !_this1.ignore_listeners) {
+					_this1.listen_y(_y3);
+				}
+			}
+			_this1.z = _z3;
+			if(!_this1._construct) {
+				if(_this1.listen_z != null && !_this1.ignore_listeners) {
+					_this1.listen_z(_z3);
+				}
+			}
+			_this1.ignore_listeners = prev5;
+			if(_this1.listen_x != null && !_this1.ignore_listeners) {
+				_this1.listen_x(_this1.x);
+			}
+			if(_this1.listen_y != null && !_this1.ignore_listeners) {
+				_this1.listen_y(_this1.y);
+			}
+			if(_this1.listen_z != null && !_this1.ignore_listeners) {
+				_this1.listen_z(_this1.z);
+			}
+			var v2 = Math.sqrt(p2.x * p2.x + p2.y * p2.y + p2.z * p2.z);
+			if(v2 != 0) {
+				var _x4 = p2.x / v2;
+				var _y4 = p2.y / v2;
+				var _z4 = p2.z / v2;
+				var prev6 = p2.ignore_listeners;
+				p2.ignore_listeners = true;
+				p2.x = _x4;
+				if(!p2._construct) {
+					if(p2.listen_x != null && !p2.ignore_listeners) {
+						p2.listen_x(_x4);
+					}
+				}
+				p2.y = _y4;
+				if(!p2._construct) {
+					if(p2.listen_y != null && !p2.ignore_listeners) {
+						p2.listen_y(_y4);
+					}
+				}
+				p2.z = _z4;
+				if(!p2._construct) {
+					if(p2.listen_z != null && !p2.ignore_listeners) {
+						p2.listen_z(_z4);
+					}
+				}
+				p2.ignore_listeners = prev6;
+				if(p2.listen_x != null && !p2.ignore_listeners) {
+					p2.listen_x(p2.x);
+				}
+				if(p2.listen_y != null && !p2.ignore_listeners) {
+					p2.listen_y(p2.y);
+				}
+				if(p2.listen_z != null && !p2.ignore_listeners) {
+					p2.listen_z(p2.z);
+				}
+			} else {
+				var prev7 = p2.ignore_listeners;
+				p2.ignore_listeners = true;
+				p2.x = 0;
+				if(!p2._construct) {
+					if(p2.listen_x != null && !p2.ignore_listeners) {
+						p2.listen_x(0);
+					}
+				}
+				p2.y = 0;
+				if(!p2._construct) {
+					if(p2.listen_y != null && !p2.ignore_listeners) {
+						p2.listen_y(0);
+					}
+				}
+				p2.z = 0;
+				if(!p2._construct) {
+					if(p2.listen_z != null && !p2.ignore_listeners) {
+						p2.listen_z(0);
+					}
+				}
+				p2.ignore_listeners = prev7;
+				if(p2.listen_x != null && !p2.ignore_listeners) {
+					p2.listen_x(p2.x);
+				}
+				if(p2.listen_y != null && !p2.ignore_listeners) {
+					p2.listen_y(p2.y);
+				}
+				if(p2.listen_z != null && !p2.ignore_listeners) {
+					p2.listen_z(p2.z);
+				}
+			}
+			var _this2 = p2;
+			var _x5 = _this2.x * inner_rad;
+			var _y5 = _this2.y * inner_rad;
+			var _z5 = _this2.z * inner_rad;
+			var prev8 = _this2.ignore_listeners;
+			_this2.ignore_listeners = true;
+			_this2.x = _x5;
+			if(!_this2._construct) {
+				if(_this2.listen_x != null && !_this2.ignore_listeners) {
+					_this2.listen_x(_x5);
+				}
+			}
+			_this2.y = _y5;
+			if(!_this2._construct) {
+				if(_this2.listen_y != null && !_this2.ignore_listeners) {
+					_this2.listen_y(_y5);
+				}
+			}
+			_this2.z = _z5;
+			if(!_this2._construct) {
+				if(_this2.listen_z != null && !_this2.ignore_listeners) {
+					_this2.listen_z(_z5);
+				}
+			}
+			_this2.ignore_listeners = prev8;
+			if(_this2.listen_x != null && !_this2.ignore_listeners) {
+				_this2.listen_x(_this2.x);
+			}
+			if(_this2.listen_y != null && !_this2.ignore_listeners) {
+				_this2.listen_y(_this2.y);
+			}
+			if(_this2.listen_z != null && !_this2.ignore_listeners) {
+				_this2.listen_z(_this2.z);
+			}
+			var v3 = Math.sqrt(p3.x * p3.x + p3.y * p3.y + p3.z * p3.z);
+			if(v3 != 0) {
+				var _x6 = p3.x / v3;
+				var _y6 = p3.y / v3;
+				var _z6 = p3.z / v3;
+				var prev9 = p3.ignore_listeners;
+				p3.ignore_listeners = true;
+				p3.x = _x6;
+				if(!p3._construct) {
+					if(p3.listen_x != null && !p3.ignore_listeners) {
+						p3.listen_x(_x6);
+					}
+				}
+				p3.y = _y6;
+				if(!p3._construct) {
+					if(p3.listen_y != null && !p3.ignore_listeners) {
+						p3.listen_y(_y6);
+					}
+				}
+				p3.z = _z6;
+				if(!p3._construct) {
+					if(p3.listen_z != null && !p3.ignore_listeners) {
+						p3.listen_z(_z6);
+					}
+				}
+				p3.ignore_listeners = prev9;
+				if(p3.listen_x != null && !p3.ignore_listeners) {
+					p3.listen_x(p3.x);
+				}
+				if(p3.listen_y != null && !p3.ignore_listeners) {
+					p3.listen_y(p3.y);
+				}
+				if(p3.listen_z != null && !p3.ignore_listeners) {
+					p3.listen_z(p3.z);
+				}
+			} else {
+				var prev10 = p3.ignore_listeners;
+				p3.ignore_listeners = true;
+				p3.x = 0;
+				if(!p3._construct) {
+					if(p3.listen_x != null && !p3.ignore_listeners) {
+						p3.listen_x(0);
+					}
+				}
+				p3.y = 0;
+				if(!p3._construct) {
+					if(p3.listen_y != null && !p3.ignore_listeners) {
+						p3.listen_y(0);
+					}
+				}
+				p3.z = 0;
+				if(!p3._construct) {
+					if(p3.listen_z != null && !p3.ignore_listeners) {
+						p3.listen_z(0);
+					}
+				}
+				p3.ignore_listeners = prev10;
+				if(p3.listen_x != null && !p3.ignore_listeners) {
+					p3.listen_x(p3.x);
+				}
+				if(p3.listen_y != null && !p3.ignore_listeners) {
+					p3.listen_y(p3.y);
+				}
+				if(p3.listen_z != null && !p3.ignore_listeners) {
+					p3.listen_z(p3.z);
+				}
+			}
+			var _this3 = p3;
+			var _x7 = _this3.x * inner_rad;
+			var _y7 = _this3.y * inner_rad;
+			var _z7 = _this3.z * inner_rad;
+			var prev11 = _this3.ignore_listeners;
+			_this3.ignore_listeners = true;
+			_this3.x = _x7;
+			if(!_this3._construct) {
+				if(_this3.listen_x != null && !_this3.ignore_listeners) {
+					_this3.listen_x(_x7);
+				}
+			}
+			_this3.y = _y7;
+			if(!_this3._construct) {
+				if(_this3.listen_y != null && !_this3.ignore_listeners) {
+					_this3.listen_y(_y7);
+				}
+			}
+			_this3.z = _z7;
+			if(!_this3._construct) {
+				if(_this3.listen_z != null && !_this3.ignore_listeners) {
+					_this3.listen_z(_z7);
+				}
+			}
+			_this3.ignore_listeners = prev11;
+			if(_this3.listen_x != null && !_this3.ignore_listeners) {
+				_this3.listen_x(_this3.x);
+			}
+			if(_this3.listen_y != null && !_this3.ignore_listeners) {
+				_this3.listen_y(_this3.y);
+			}
+			if(_this3.listen_z != null && !_this3.ignore_listeners) {
+				_this3.listen_z(_this3.z);
+			}
+			this.geometry.add(new phoenix_geometry_Vertex(p0));
+			this.geometry.add(new phoenix_geometry_Vertex(p1));
+			this.geometry.add(new phoenix_geometry_Vertex(p2));
+			this.geometry.add(new phoenix_geometry_Vertex(p2));
+			this.geometry.add(new phoenix_geometry_Vertex(p1));
+			this.geometry.add(new phoenix_geometry_Vertex(p3));
+		}
+		var this5 = new phoenix_Vector(1,1,null,null);
+		var p01 = this5;
+		var this6 = new phoenix_Vector(30,30,null,null);
+		var p11 = this6;
+		var this7 = new phoenix_Vector(p01.y,-p01.x,null,null);
+		var v0 = this7;
+		var this8 = new phoenix_Vector(-p01.y,p01.x,null,null);
+		var v11 = this8;
+		var this9 = new phoenix_Vector(p11.y,-p11.x,null,null);
+		var v21 = this9;
+		var this10 = new phoenix_Vector(-p11.y,p11.x,null,null);
+		var v31 = this10;
+		this.geometry.add(new phoenix_geometry_Vertex(v0));
+		this.geometry.add(new phoenix_geometry_Vertex(v11));
+		this.geometry.add(new phoenix_geometry_Vertex(v21));
+		this.geometry.add(new phoenix_geometry_Vertex(v21));
+		this.geometry.add(new phoenix_geometry_Vertex(v31));
+		this.geometry.add(new phoenix_geometry_Vertex(v11));
+		this.set_color(new phoenix_Color(1,1,1,1));
+	}
+	,update: function(dt) {
+	}
+	,ondestroy: function() {
+		luxe_Visual.prototype.ondestroy.call(this);
+	}
+	,__class__: entities_Swinger
 });
 var haxe_StackItem = $hxClasses["haxe.StackItem"] = { __ename__ : ["haxe","StackItem"], __constructs__ : ["CFunction","Module","FilePos","Method","LocalFunction"] };
 haxe_StackItem.CFunction = ["CFunction",0];

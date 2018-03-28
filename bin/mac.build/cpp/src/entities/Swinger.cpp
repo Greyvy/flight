@@ -44,7 +44,7 @@
 
 HX_DEFINE_STACK_FRAME(_hx_pos_0918f0feda7df168_17_new,"entities.Swinger","new",0x10e7bb50,"entities.Swinger.new","entities/Swinger.hx",17,0x5c358961)
 HX_LOCAL_STACK_FRAME(_hx_pos_0918f0feda7df168_19_init,"entities.Swinger","init",0xb694e220,"entities.Swinger.init","entities/Swinger.hx",19,0x5c358961)
-HX_LOCAL_STACK_FRAME(_hx_pos_0918f0feda7df168_58_update,"entities.Swinger","update",0x1ee31119,"entities.Swinger.update","entities/Swinger.hx",58,0x5c358961)
+HX_LOCAL_STACK_FRAME(_hx_pos_0918f0feda7df168_57_update,"entities.Swinger","update",0x1ee31119,"entities.Swinger.update","entities/Swinger.hx",57,0x5c358961)
 HX_LOCAL_STACK_FRAME(_hx_pos_cb8d5ce535fc8a65_47_ondestroy,"entities.Swinger","ondestroy",0x0a5e7cab,"entities.Swinger.ondestroy","luxe/macros/EntityRules.hx",47,0xed942299)
 namespace entities{
 
@@ -90,1049 +90,1049 @@ HXLINE(  25)		int pieces = (int)32;
 HXLINE(  26)		Float piece = ((Float)tau / (Float)pieces);
 HXLINE(  28)		int radius = (int)16;
 HXLINE(  29)		int thickness = (int)2;
-HXLINE(  32)		int inner_rad = (radius - thickness);
-HXLINE(  34)		{
-HXLINE(  34)			int _g1 = (int)0;
-HXDLIN(  34)			int _g = pieces;
-HXDLIN(  34)			while((_g1 < _g)){
-HXLINE(  34)				_g1 = (_g1 + (int)1);
-HXDLIN(  34)				int i = (_g1 - (int)1);
-HXLINE(  35)				 ::phoenix::Vector this1 =  ::phoenix::Vector_obj::__alloc( HX_CTX ,::Math_obj::cos((piece * i)),::Math_obj::sin((piece * i)),null(),null());
-HXDLIN(  35)				 ::phoenix::Vector p0 = this1;
-HXLINE(  36)				 ::phoenix::Vector this2 =  ::phoenix::Vector_obj::__alloc( HX_CTX ,::Math_obj::cos((piece * (i + (int)1))),::Math_obj::sin((piece * (i + (int)1))),null(),null());
-HXDLIN(  36)				 ::phoenix::Vector p1 = this2;
-HXLINE(  37)				 ::phoenix::Vector this3 =  ::phoenix::Vector_obj::__alloc( HX_CTX ,::Math_obj::cos((piece * i)),::Math_obj::sin((piece * i)),null(),null());
-HXDLIN(  37)				 ::phoenix::Vector p2 = this3;
-HXLINE(  38)				 ::phoenix::Vector this4 =  ::phoenix::Vector_obj::__alloc( HX_CTX ,::Math_obj::cos((piece * (i + (int)1))),::Math_obj::sin((piece * (i + (int)1))),null(),null());
-HXDLIN(  38)				 ::phoenix::Vector p3 = this4;
-HXLINE(  40)				{
-HXLINE(  40)					Float v = (p0->x * p0->x);
-HXDLIN(  40)					Float v1 = (v + (p0->y * p0->y));
-HXDLIN(  40)					Float v2 = ::Math_obj::sqrt((v1 + (p0->z * p0->z)));
-HXDLIN(  40)					if ((v2 != (int)0)) {
-HXLINE(  40)						Float _x = ((Float)p0->x / (Float)v2);
-HXDLIN(  40)						Float _y = ((Float)p0->y / (Float)v2);
-HXDLIN(  40)						Float _z = ((Float)p0->z / (Float)v2);
-HXDLIN(  40)						bool prev = p0->ignore_listeners;
-HXDLIN(  40)						p0->ignore_listeners = true;
-HXDLIN(  40)						{
-HXLINE(  40)							p0->x = _x;
-HXDLIN(  40)							if (!(p0->_construct)) {
-HXLINE(  40)								bool _hx_tmp;
-HXDLIN(  40)								if (hx::IsNotNull( p0->listen_x )) {
-HXLINE(  40)									_hx_tmp = !(p0->ignore_listeners);
+HXLINE(  31)		int inner_rad = (radius - thickness);
+HXLINE(  33)		{
+HXLINE(  33)			int _g1 = (int)0;
+HXDLIN(  33)			int _g = pieces;
+HXDLIN(  33)			while((_g1 < _g)){
+HXLINE(  33)				_g1 = (_g1 + (int)1);
+HXDLIN(  33)				int i = (_g1 - (int)1);
+HXLINE(  34)				 ::phoenix::Vector this1 =  ::phoenix::Vector_obj::__alloc( HX_CTX ,::Math_obj::cos((piece * i)),::Math_obj::sin((piece * i)),null(),null());
+HXDLIN(  34)				 ::phoenix::Vector p0 = this1;
+HXLINE(  35)				 ::phoenix::Vector this2 =  ::phoenix::Vector_obj::__alloc( HX_CTX ,::Math_obj::cos((piece * (i + (int)1))),::Math_obj::sin((piece * (i + (int)1))),null(),null());
+HXDLIN(  35)				 ::phoenix::Vector p1 = this2;
+HXLINE(  36)				 ::phoenix::Vector this3 =  ::phoenix::Vector_obj::__alloc( HX_CTX ,::Math_obj::cos((piece * i)),::Math_obj::sin((piece * i)),null(),null());
+HXDLIN(  36)				 ::phoenix::Vector p2 = this3;
+HXLINE(  37)				 ::phoenix::Vector this4 =  ::phoenix::Vector_obj::__alloc( HX_CTX ,::Math_obj::cos((piece * (i + (int)1))),::Math_obj::sin((piece * (i + (int)1))),null(),null());
+HXDLIN(  37)				 ::phoenix::Vector p3 = this4;
+HXLINE(  39)				{
+HXLINE(  39)					Float v = (p0->x * p0->x);
+HXDLIN(  39)					Float v1 = (v + (p0->y * p0->y));
+HXDLIN(  39)					Float v2 = ::Math_obj::sqrt((v1 + (p0->z * p0->z)));
+HXDLIN(  39)					if ((v2 != (int)0)) {
+HXLINE(  39)						Float _x = ((Float)p0->x / (Float)v2);
+HXDLIN(  39)						Float _y = ((Float)p0->y / (Float)v2);
+HXDLIN(  39)						Float _z = ((Float)p0->z / (Float)v2);
+HXDLIN(  39)						bool prev = p0->ignore_listeners;
+HXDLIN(  39)						p0->ignore_listeners = true;
+HXDLIN(  39)						{
+HXLINE(  39)							p0->x = _x;
+HXDLIN(  39)							if (!(p0->_construct)) {
+HXLINE(  39)								bool _hx_tmp;
+HXDLIN(  39)								if (hx::IsNotNull( p0->listen_x )) {
+HXLINE(  39)									_hx_tmp = !(p0->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp = false;
+HXLINE(  39)									_hx_tmp = false;
             								}
-HXDLIN(  40)								if (_hx_tmp) {
-HXLINE(  40)									p0->listen_x(_x);
+HXDLIN(  39)								if (_hx_tmp) {
+HXLINE(  39)									p0->listen_x(_x);
             								}
             							}
             						}
-HXDLIN(  40)						{
-HXLINE(  40)							p0->y = _y;
-HXDLIN(  40)							if (!(p0->_construct)) {
-HXLINE(  40)								bool _hx_tmp1;
-HXDLIN(  40)								if (hx::IsNotNull( p0->listen_y )) {
-HXLINE(  40)									_hx_tmp1 = !(p0->ignore_listeners);
+HXDLIN(  39)						{
+HXLINE(  39)							p0->y = _y;
+HXDLIN(  39)							if (!(p0->_construct)) {
+HXLINE(  39)								bool _hx_tmp1;
+HXDLIN(  39)								if (hx::IsNotNull( p0->listen_y )) {
+HXLINE(  39)									_hx_tmp1 = !(p0->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp1 = false;
+HXLINE(  39)									_hx_tmp1 = false;
             								}
-HXDLIN(  40)								if (_hx_tmp1) {
-HXLINE(  40)									p0->listen_y(_y);
+HXDLIN(  39)								if (_hx_tmp1) {
+HXLINE(  39)									p0->listen_y(_y);
             								}
             							}
             						}
-HXDLIN(  40)						{
-HXLINE(  40)							p0->z = _z;
-HXDLIN(  40)							if (!(p0->_construct)) {
-HXLINE(  40)								bool _hx_tmp2;
-HXDLIN(  40)								if (hx::IsNotNull( p0->listen_z )) {
-HXLINE(  40)									_hx_tmp2 = !(p0->ignore_listeners);
+HXDLIN(  39)						{
+HXLINE(  39)							p0->z = _z;
+HXDLIN(  39)							if (!(p0->_construct)) {
+HXLINE(  39)								bool _hx_tmp2;
+HXDLIN(  39)								if (hx::IsNotNull( p0->listen_z )) {
+HXLINE(  39)									_hx_tmp2 = !(p0->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp2 = false;
+HXLINE(  39)									_hx_tmp2 = false;
             								}
-HXDLIN(  40)								if (_hx_tmp2) {
-HXLINE(  40)									p0->listen_z(_z);
+HXDLIN(  39)								if (_hx_tmp2) {
+HXLINE(  39)									p0->listen_z(_z);
             								}
             							}
             						}
-HXDLIN(  40)						p0->ignore_listeners = prev;
-HXDLIN(  40)						bool _hx_tmp3;
-HXDLIN(  40)						if (hx::IsNotNull( p0->listen_x )) {
-HXLINE(  40)							_hx_tmp3 = !(p0->ignore_listeners);
+HXDLIN(  39)						p0->ignore_listeners = prev;
+HXDLIN(  39)						bool _hx_tmp3;
+HXDLIN(  39)						if (hx::IsNotNull( p0->listen_x )) {
+HXLINE(  39)							_hx_tmp3 = !(p0->ignore_listeners);
             						}
             						else {
-HXLINE(  40)							_hx_tmp3 = false;
+HXLINE(  39)							_hx_tmp3 = false;
             						}
-HXDLIN(  40)						if (_hx_tmp3) {
-HXLINE(  40)							p0->listen_x(p0->x);
+HXDLIN(  39)						if (_hx_tmp3) {
+HXLINE(  39)							p0->listen_x(p0->x);
             						}
-HXDLIN(  40)						bool _hx_tmp4;
-HXDLIN(  40)						if (hx::IsNotNull( p0->listen_y )) {
-HXLINE(  40)							_hx_tmp4 = !(p0->ignore_listeners);
-            						}
-            						else {
-HXLINE(  40)							_hx_tmp4 = false;
-            						}
-HXDLIN(  40)						if (_hx_tmp4) {
-HXLINE(  40)							p0->listen_y(p0->y);
-            						}
-HXDLIN(  40)						bool _hx_tmp5;
-HXDLIN(  40)						if (hx::IsNotNull( p0->listen_z )) {
-HXLINE(  40)							_hx_tmp5 = !(p0->ignore_listeners);
+HXDLIN(  39)						bool _hx_tmp4;
+HXDLIN(  39)						if (hx::IsNotNull( p0->listen_y )) {
+HXLINE(  39)							_hx_tmp4 = !(p0->ignore_listeners);
             						}
             						else {
-HXLINE(  40)							_hx_tmp5 = false;
+HXLINE(  39)							_hx_tmp4 = false;
             						}
-HXDLIN(  40)						if (_hx_tmp5) {
-HXLINE(  40)							p0->listen_z(p0->z);
+HXDLIN(  39)						if (_hx_tmp4) {
+HXLINE(  39)							p0->listen_y(p0->y);
+            						}
+HXDLIN(  39)						bool _hx_tmp5;
+HXDLIN(  39)						if (hx::IsNotNull( p0->listen_z )) {
+HXLINE(  39)							_hx_tmp5 = !(p0->ignore_listeners);
+            						}
+            						else {
+HXLINE(  39)							_hx_tmp5 = false;
+            						}
+HXDLIN(  39)						if (_hx_tmp5) {
+HXLINE(  39)							p0->listen_z(p0->z);
             						}
             					}
             					else {
-HXLINE(  40)						bool prev1 = p0->ignore_listeners;
-HXDLIN(  40)						p0->ignore_listeners = true;
-HXDLIN(  40)						{
-HXLINE(  40)							p0->x = (int)0;
-HXDLIN(  40)							if (!(p0->_construct)) {
-HXLINE(  40)								bool _hx_tmp6;
-HXDLIN(  40)								if (hx::IsNotNull( p0->listen_x )) {
-HXLINE(  40)									_hx_tmp6 = !(p0->ignore_listeners);
+HXLINE(  39)						bool prev1 = p0->ignore_listeners;
+HXDLIN(  39)						p0->ignore_listeners = true;
+HXDLIN(  39)						{
+HXLINE(  39)							p0->x = (int)0;
+HXDLIN(  39)							if (!(p0->_construct)) {
+HXLINE(  39)								bool _hx_tmp6;
+HXDLIN(  39)								if (hx::IsNotNull( p0->listen_x )) {
+HXLINE(  39)									_hx_tmp6 = !(p0->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp6 = false;
+HXLINE(  39)									_hx_tmp6 = false;
             								}
-HXDLIN(  40)								if (_hx_tmp6) {
-HXLINE(  40)									p0->listen_x((int)0);
+HXDLIN(  39)								if (_hx_tmp6) {
+HXLINE(  39)									p0->listen_x((int)0);
             								}
             							}
             						}
-HXDLIN(  40)						{
-HXLINE(  40)							p0->y = (int)0;
-HXDLIN(  40)							if (!(p0->_construct)) {
-HXLINE(  40)								bool _hx_tmp7;
-HXDLIN(  40)								if (hx::IsNotNull( p0->listen_y )) {
-HXLINE(  40)									_hx_tmp7 = !(p0->ignore_listeners);
+HXDLIN(  39)						{
+HXLINE(  39)							p0->y = (int)0;
+HXDLIN(  39)							if (!(p0->_construct)) {
+HXLINE(  39)								bool _hx_tmp7;
+HXDLIN(  39)								if (hx::IsNotNull( p0->listen_y )) {
+HXLINE(  39)									_hx_tmp7 = !(p0->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp7 = false;
+HXLINE(  39)									_hx_tmp7 = false;
             								}
-HXDLIN(  40)								if (_hx_tmp7) {
-HXLINE(  40)									p0->listen_y((int)0);
+HXDLIN(  39)								if (_hx_tmp7) {
+HXLINE(  39)									p0->listen_y((int)0);
             								}
             							}
             						}
-HXDLIN(  40)						{
-HXLINE(  40)							p0->z = (int)0;
-HXDLIN(  40)							if (!(p0->_construct)) {
-HXLINE(  40)								bool _hx_tmp8;
-HXDLIN(  40)								if (hx::IsNotNull( p0->listen_z )) {
-HXLINE(  40)									_hx_tmp8 = !(p0->ignore_listeners);
+HXDLIN(  39)						{
+HXLINE(  39)							p0->z = (int)0;
+HXDLIN(  39)							if (!(p0->_construct)) {
+HXLINE(  39)								bool _hx_tmp8;
+HXDLIN(  39)								if (hx::IsNotNull( p0->listen_z )) {
+HXLINE(  39)									_hx_tmp8 = !(p0->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp8 = false;
+HXLINE(  39)									_hx_tmp8 = false;
             								}
-HXDLIN(  40)								if (_hx_tmp8) {
-HXLINE(  40)									p0->listen_z((int)0);
+HXDLIN(  39)								if (_hx_tmp8) {
+HXLINE(  39)									p0->listen_z((int)0);
             								}
             							}
             						}
-HXDLIN(  40)						p0->ignore_listeners = prev1;
-HXDLIN(  40)						bool _hx_tmp9;
-HXDLIN(  40)						if (hx::IsNotNull( p0->listen_x )) {
-HXLINE(  40)							_hx_tmp9 = !(p0->ignore_listeners);
+HXDLIN(  39)						p0->ignore_listeners = prev1;
+HXDLIN(  39)						bool _hx_tmp9;
+HXDLIN(  39)						if (hx::IsNotNull( p0->listen_x )) {
+HXLINE(  39)							_hx_tmp9 = !(p0->ignore_listeners);
             						}
             						else {
-HXLINE(  40)							_hx_tmp9 = false;
+HXLINE(  39)							_hx_tmp9 = false;
             						}
-HXDLIN(  40)						if (_hx_tmp9) {
-HXLINE(  40)							p0->listen_x(p0->x);
+HXDLIN(  39)						if (_hx_tmp9) {
+HXLINE(  39)							p0->listen_x(p0->x);
             						}
-HXDLIN(  40)						bool _hx_tmp10;
-HXDLIN(  40)						if (hx::IsNotNull( p0->listen_y )) {
-HXLINE(  40)							_hx_tmp10 = !(p0->ignore_listeners);
-            						}
-            						else {
-HXLINE(  40)							_hx_tmp10 = false;
-            						}
-HXDLIN(  40)						if (_hx_tmp10) {
-HXLINE(  40)							p0->listen_y(p0->y);
-            						}
-HXDLIN(  40)						bool _hx_tmp11;
-HXDLIN(  40)						if (hx::IsNotNull( p0->listen_z )) {
-HXLINE(  40)							_hx_tmp11 = !(p0->ignore_listeners);
+HXDLIN(  39)						bool _hx_tmp10;
+HXDLIN(  39)						if (hx::IsNotNull( p0->listen_y )) {
+HXLINE(  39)							_hx_tmp10 = !(p0->ignore_listeners);
             						}
             						else {
-HXLINE(  40)							_hx_tmp11 = false;
+HXLINE(  39)							_hx_tmp10 = false;
             						}
-HXDLIN(  40)						if (_hx_tmp11) {
-HXLINE(  40)							p0->listen_z(p0->z);
+HXDLIN(  39)						if (_hx_tmp10) {
+HXLINE(  39)							p0->listen_y(p0->y);
+            						}
+HXDLIN(  39)						bool _hx_tmp11;
+HXDLIN(  39)						if (hx::IsNotNull( p0->listen_z )) {
+HXLINE(  39)							_hx_tmp11 = !(p0->ignore_listeners);
+            						}
+            						else {
+HXLINE(  39)							_hx_tmp11 = false;
+            						}
+HXDLIN(  39)						if (_hx_tmp11) {
+HXLINE(  39)							p0->listen_z(p0->z);
             						}
             					}
-HXDLIN(  40)					 ::phoenix::Vector _this = p0;
+HXDLIN(  39)					 ::phoenix::Vector _this = p0;
+HXDLIN(  39)					{
+HXLINE(  39)						Float _x1 = (_this->x * radius);
+HXDLIN(  39)						Float _y1 = (_this->y * radius);
+HXDLIN(  39)						Float _z1 = (_this->z * radius);
+HXDLIN(  39)						bool prev2 = _this->ignore_listeners;
+HXDLIN(  39)						_this->ignore_listeners = true;
+HXDLIN(  39)						{
+HXLINE(  39)							_this->x = _x1;
+HXDLIN(  39)							if (!(_this->_construct)) {
+HXLINE(  39)								bool _hx_tmp12;
+HXDLIN(  39)								if (hx::IsNotNull( _this->listen_x )) {
+HXLINE(  39)									_hx_tmp12 = !(_this->ignore_listeners);
+            								}
+            								else {
+HXLINE(  39)									_hx_tmp12 = false;
+            								}
+HXDLIN(  39)								if (_hx_tmp12) {
+HXLINE(  39)									_this->listen_x(_x1);
+            								}
+            							}
+            						}
+HXDLIN(  39)						{
+HXLINE(  39)							_this->y = _y1;
+HXDLIN(  39)							if (!(_this->_construct)) {
+HXLINE(  39)								bool _hx_tmp13;
+HXDLIN(  39)								if (hx::IsNotNull( _this->listen_y )) {
+HXLINE(  39)									_hx_tmp13 = !(_this->ignore_listeners);
+            								}
+            								else {
+HXLINE(  39)									_hx_tmp13 = false;
+            								}
+HXDLIN(  39)								if (_hx_tmp13) {
+HXLINE(  39)									_this->listen_y(_y1);
+            								}
+            							}
+            						}
+HXDLIN(  39)						{
+HXLINE(  39)							_this->z = _z1;
+HXDLIN(  39)							if (!(_this->_construct)) {
+HXLINE(  39)								bool _hx_tmp14;
+HXDLIN(  39)								if (hx::IsNotNull( _this->listen_z )) {
+HXLINE(  39)									_hx_tmp14 = !(_this->ignore_listeners);
+            								}
+            								else {
+HXLINE(  39)									_hx_tmp14 = false;
+            								}
+HXDLIN(  39)								if (_hx_tmp14) {
+HXLINE(  39)									_this->listen_z(_z1);
+            								}
+            							}
+            						}
+HXDLIN(  39)						_this->ignore_listeners = prev2;
+HXDLIN(  39)						bool _hx_tmp15;
+HXDLIN(  39)						if (hx::IsNotNull( _this->listen_x )) {
+HXLINE(  39)							_hx_tmp15 = !(_this->ignore_listeners);
+            						}
+            						else {
+HXLINE(  39)							_hx_tmp15 = false;
+            						}
+HXDLIN(  39)						if (_hx_tmp15) {
+HXLINE(  39)							_this->listen_x(_this->x);
+            						}
+HXDLIN(  39)						bool _hx_tmp16;
+HXDLIN(  39)						if (hx::IsNotNull( _this->listen_y )) {
+HXLINE(  39)							_hx_tmp16 = !(_this->ignore_listeners);
+            						}
+            						else {
+HXLINE(  39)							_hx_tmp16 = false;
+            						}
+HXDLIN(  39)						if (_hx_tmp16) {
+HXLINE(  39)							_this->listen_y(_this->y);
+            						}
+HXDLIN(  39)						bool _hx_tmp17;
+HXDLIN(  39)						if (hx::IsNotNull( _this->listen_z )) {
+HXLINE(  39)							_hx_tmp17 = !(_this->ignore_listeners);
+            						}
+            						else {
+HXLINE(  39)							_hx_tmp17 = false;
+            						}
+HXDLIN(  39)						if (_hx_tmp17) {
+HXLINE(  39)							_this->listen_z(_this->z);
+            						}
+            					}
+            				}
+HXLINE(  40)				{
+HXLINE(  40)					Float v3 = (p1->x * p1->x);
+HXDLIN(  40)					Float v4 = (v3 + (p1->y * p1->y));
+HXDLIN(  40)					Float v5 = ::Math_obj::sqrt((v4 + (p1->z * p1->z)));
+HXDLIN(  40)					if ((v5 != (int)0)) {
+HXLINE(  40)						Float _x2 = ((Float)p1->x / (Float)v5);
+HXDLIN(  40)						Float _y2 = ((Float)p1->y / (Float)v5);
+HXDLIN(  40)						Float _z2 = ((Float)p1->z / (Float)v5);
+HXDLIN(  40)						bool prev3 = p1->ignore_listeners;
+HXDLIN(  40)						p1->ignore_listeners = true;
+HXDLIN(  40)						{
+HXLINE(  40)							p1->x = _x2;
+HXDLIN(  40)							if (!(p1->_construct)) {
+HXLINE(  40)								bool _hx_tmp18;
+HXDLIN(  40)								if (hx::IsNotNull( p1->listen_x )) {
+HXLINE(  40)									_hx_tmp18 = !(p1->ignore_listeners);
+            								}
+            								else {
+HXLINE(  40)									_hx_tmp18 = false;
+            								}
+HXDLIN(  40)								if (_hx_tmp18) {
+HXLINE(  40)									p1->listen_x(_x2);
+            								}
+            							}
+            						}
+HXDLIN(  40)						{
+HXLINE(  40)							p1->y = _y2;
+HXDLIN(  40)							if (!(p1->_construct)) {
+HXLINE(  40)								bool _hx_tmp19;
+HXDLIN(  40)								if (hx::IsNotNull( p1->listen_y )) {
+HXLINE(  40)									_hx_tmp19 = !(p1->ignore_listeners);
+            								}
+            								else {
+HXLINE(  40)									_hx_tmp19 = false;
+            								}
+HXDLIN(  40)								if (_hx_tmp19) {
+HXLINE(  40)									p1->listen_y(_y2);
+            								}
+            							}
+            						}
+HXDLIN(  40)						{
+HXLINE(  40)							p1->z = _z2;
+HXDLIN(  40)							if (!(p1->_construct)) {
+HXLINE(  40)								bool _hx_tmp20;
+HXDLIN(  40)								if (hx::IsNotNull( p1->listen_z )) {
+HXLINE(  40)									_hx_tmp20 = !(p1->ignore_listeners);
+            								}
+            								else {
+HXLINE(  40)									_hx_tmp20 = false;
+            								}
+HXDLIN(  40)								if (_hx_tmp20) {
+HXLINE(  40)									p1->listen_z(_z2);
+            								}
+            							}
+            						}
+HXDLIN(  40)						p1->ignore_listeners = prev3;
+HXDLIN(  40)						bool _hx_tmp21;
+HXDLIN(  40)						if (hx::IsNotNull( p1->listen_x )) {
+HXLINE(  40)							_hx_tmp21 = !(p1->ignore_listeners);
+            						}
+            						else {
+HXLINE(  40)							_hx_tmp21 = false;
+            						}
+HXDLIN(  40)						if (_hx_tmp21) {
+HXLINE(  40)							p1->listen_x(p1->x);
+            						}
+HXDLIN(  40)						bool _hx_tmp22;
+HXDLIN(  40)						if (hx::IsNotNull( p1->listen_y )) {
+HXLINE(  40)							_hx_tmp22 = !(p1->ignore_listeners);
+            						}
+            						else {
+HXLINE(  40)							_hx_tmp22 = false;
+            						}
+HXDLIN(  40)						if (_hx_tmp22) {
+HXLINE(  40)							p1->listen_y(p1->y);
+            						}
+HXDLIN(  40)						bool _hx_tmp23;
+HXDLIN(  40)						if (hx::IsNotNull( p1->listen_z )) {
+HXLINE(  40)							_hx_tmp23 = !(p1->ignore_listeners);
+            						}
+            						else {
+HXLINE(  40)							_hx_tmp23 = false;
+            						}
+HXDLIN(  40)						if (_hx_tmp23) {
+HXLINE(  40)							p1->listen_z(p1->z);
+            						}
+            					}
+            					else {
+HXLINE(  40)						bool prev4 = p1->ignore_listeners;
+HXDLIN(  40)						p1->ignore_listeners = true;
+HXDLIN(  40)						{
+HXLINE(  40)							p1->x = (int)0;
+HXDLIN(  40)							if (!(p1->_construct)) {
+HXLINE(  40)								bool _hx_tmp24;
+HXDLIN(  40)								if (hx::IsNotNull( p1->listen_x )) {
+HXLINE(  40)									_hx_tmp24 = !(p1->ignore_listeners);
+            								}
+            								else {
+HXLINE(  40)									_hx_tmp24 = false;
+            								}
+HXDLIN(  40)								if (_hx_tmp24) {
+HXLINE(  40)									p1->listen_x((int)0);
+            								}
+            							}
+            						}
+HXDLIN(  40)						{
+HXLINE(  40)							p1->y = (int)0;
+HXDLIN(  40)							if (!(p1->_construct)) {
+HXLINE(  40)								bool _hx_tmp25;
+HXDLIN(  40)								if (hx::IsNotNull( p1->listen_y )) {
+HXLINE(  40)									_hx_tmp25 = !(p1->ignore_listeners);
+            								}
+            								else {
+HXLINE(  40)									_hx_tmp25 = false;
+            								}
+HXDLIN(  40)								if (_hx_tmp25) {
+HXLINE(  40)									p1->listen_y((int)0);
+            								}
+            							}
+            						}
+HXDLIN(  40)						{
+HXLINE(  40)							p1->z = (int)0;
+HXDLIN(  40)							if (!(p1->_construct)) {
+HXLINE(  40)								bool _hx_tmp26;
+HXDLIN(  40)								if (hx::IsNotNull( p1->listen_z )) {
+HXLINE(  40)									_hx_tmp26 = !(p1->ignore_listeners);
+            								}
+            								else {
+HXLINE(  40)									_hx_tmp26 = false;
+            								}
+HXDLIN(  40)								if (_hx_tmp26) {
+HXLINE(  40)									p1->listen_z((int)0);
+            								}
+            							}
+            						}
+HXDLIN(  40)						p1->ignore_listeners = prev4;
+HXDLIN(  40)						bool _hx_tmp27;
+HXDLIN(  40)						if (hx::IsNotNull( p1->listen_x )) {
+HXLINE(  40)							_hx_tmp27 = !(p1->ignore_listeners);
+            						}
+            						else {
+HXLINE(  40)							_hx_tmp27 = false;
+            						}
+HXDLIN(  40)						if (_hx_tmp27) {
+HXLINE(  40)							p1->listen_x(p1->x);
+            						}
+HXDLIN(  40)						bool _hx_tmp28;
+HXDLIN(  40)						if (hx::IsNotNull( p1->listen_y )) {
+HXLINE(  40)							_hx_tmp28 = !(p1->ignore_listeners);
+            						}
+            						else {
+HXLINE(  40)							_hx_tmp28 = false;
+            						}
+HXDLIN(  40)						if (_hx_tmp28) {
+HXLINE(  40)							p1->listen_y(p1->y);
+            						}
+HXDLIN(  40)						bool _hx_tmp29;
+HXDLIN(  40)						if (hx::IsNotNull( p1->listen_z )) {
+HXLINE(  40)							_hx_tmp29 = !(p1->ignore_listeners);
+            						}
+            						else {
+HXLINE(  40)							_hx_tmp29 = false;
+            						}
+HXDLIN(  40)						if (_hx_tmp29) {
+HXLINE(  40)							p1->listen_z(p1->z);
+            						}
+            					}
+HXDLIN(  40)					 ::phoenix::Vector _this1 = p1;
 HXDLIN(  40)					{
-HXLINE(  40)						Float _x1 = (_this->x * radius);
-HXDLIN(  40)						Float _y1 = (_this->y * radius);
-HXDLIN(  40)						Float _z1 = (_this->z * radius);
-HXDLIN(  40)						bool prev2 = _this->ignore_listeners;
-HXDLIN(  40)						_this->ignore_listeners = true;
+HXLINE(  40)						Float _x3 = (_this1->x * radius);
+HXDLIN(  40)						Float _y3 = (_this1->y * radius);
+HXDLIN(  40)						Float _z3 = (_this1->z * radius);
+HXDLIN(  40)						bool prev5 = _this1->ignore_listeners;
+HXDLIN(  40)						_this1->ignore_listeners = true;
 HXDLIN(  40)						{
-HXLINE(  40)							_this->x = _x1;
-HXDLIN(  40)							if (!(_this->_construct)) {
-HXLINE(  40)								bool _hx_tmp12;
-HXDLIN(  40)								if (hx::IsNotNull( _this->listen_x )) {
-HXLINE(  40)									_hx_tmp12 = !(_this->ignore_listeners);
+HXLINE(  40)							_this1->x = _x3;
+HXDLIN(  40)							if (!(_this1->_construct)) {
+HXLINE(  40)								bool _hx_tmp30;
+HXDLIN(  40)								if (hx::IsNotNull( _this1->listen_x )) {
+HXLINE(  40)									_hx_tmp30 = !(_this1->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp12 = false;
+HXLINE(  40)									_hx_tmp30 = false;
             								}
-HXDLIN(  40)								if (_hx_tmp12) {
-HXLINE(  40)									_this->listen_x(_x1);
+HXDLIN(  40)								if (_hx_tmp30) {
+HXLINE(  40)									_this1->listen_x(_x3);
             								}
             							}
             						}
 HXDLIN(  40)						{
-HXLINE(  40)							_this->y = _y1;
-HXDLIN(  40)							if (!(_this->_construct)) {
-HXLINE(  40)								bool _hx_tmp13;
-HXDLIN(  40)								if (hx::IsNotNull( _this->listen_y )) {
-HXLINE(  40)									_hx_tmp13 = !(_this->ignore_listeners);
+HXLINE(  40)							_this1->y = _y3;
+HXDLIN(  40)							if (!(_this1->_construct)) {
+HXLINE(  40)								bool _hx_tmp31;
+HXDLIN(  40)								if (hx::IsNotNull( _this1->listen_y )) {
+HXLINE(  40)									_hx_tmp31 = !(_this1->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp13 = false;
+HXLINE(  40)									_hx_tmp31 = false;
             								}
-HXDLIN(  40)								if (_hx_tmp13) {
-HXLINE(  40)									_this->listen_y(_y1);
+HXDLIN(  40)								if (_hx_tmp31) {
+HXLINE(  40)									_this1->listen_y(_y3);
             								}
             							}
             						}
 HXDLIN(  40)						{
-HXLINE(  40)							_this->z = _z1;
-HXDLIN(  40)							if (!(_this->_construct)) {
-HXLINE(  40)								bool _hx_tmp14;
-HXDLIN(  40)								if (hx::IsNotNull( _this->listen_z )) {
-HXLINE(  40)									_hx_tmp14 = !(_this->ignore_listeners);
+HXLINE(  40)							_this1->z = _z3;
+HXDLIN(  40)							if (!(_this1->_construct)) {
+HXLINE(  40)								bool _hx_tmp32;
+HXDLIN(  40)								if (hx::IsNotNull( _this1->listen_z )) {
+HXLINE(  40)									_hx_tmp32 = !(_this1->ignore_listeners);
             								}
             								else {
-HXLINE(  40)									_hx_tmp14 = false;
+HXLINE(  40)									_hx_tmp32 = false;
             								}
-HXDLIN(  40)								if (_hx_tmp14) {
-HXLINE(  40)									_this->listen_z(_z1);
+HXDLIN(  40)								if (_hx_tmp32) {
+HXLINE(  40)									_this1->listen_z(_z3);
             								}
             							}
             						}
-HXDLIN(  40)						_this->ignore_listeners = prev2;
-HXDLIN(  40)						bool _hx_tmp15;
-HXDLIN(  40)						if (hx::IsNotNull( _this->listen_x )) {
-HXLINE(  40)							_hx_tmp15 = !(_this->ignore_listeners);
+HXDLIN(  40)						_this1->ignore_listeners = prev5;
+HXDLIN(  40)						bool _hx_tmp33;
+HXDLIN(  40)						if (hx::IsNotNull( _this1->listen_x )) {
+HXLINE(  40)							_hx_tmp33 = !(_this1->ignore_listeners);
             						}
             						else {
-HXLINE(  40)							_hx_tmp15 = false;
+HXLINE(  40)							_hx_tmp33 = false;
             						}
-HXDLIN(  40)						if (_hx_tmp15) {
-HXLINE(  40)							_this->listen_x(_this->x);
+HXDLIN(  40)						if (_hx_tmp33) {
+HXLINE(  40)							_this1->listen_x(_this1->x);
             						}
-HXDLIN(  40)						bool _hx_tmp16;
-HXDLIN(  40)						if (hx::IsNotNull( _this->listen_y )) {
-HXLINE(  40)							_hx_tmp16 = !(_this->ignore_listeners);
-            						}
-            						else {
-HXLINE(  40)							_hx_tmp16 = false;
-            						}
-HXDLIN(  40)						if (_hx_tmp16) {
-HXLINE(  40)							_this->listen_y(_this->y);
-            						}
-HXDLIN(  40)						bool _hx_tmp17;
-HXDLIN(  40)						if (hx::IsNotNull( _this->listen_z )) {
-HXLINE(  40)							_hx_tmp17 = !(_this->ignore_listeners);
+HXDLIN(  40)						bool _hx_tmp34;
+HXDLIN(  40)						if (hx::IsNotNull( _this1->listen_y )) {
+HXLINE(  40)							_hx_tmp34 = !(_this1->ignore_listeners);
             						}
             						else {
-HXLINE(  40)							_hx_tmp17 = false;
+HXLINE(  40)							_hx_tmp34 = false;
             						}
-HXDLIN(  40)						if (_hx_tmp17) {
-HXLINE(  40)							_this->listen_z(_this->z);
+HXDLIN(  40)						if (_hx_tmp34) {
+HXLINE(  40)							_this1->listen_y(_this1->y);
+            						}
+HXDLIN(  40)						bool _hx_tmp35;
+HXDLIN(  40)						if (hx::IsNotNull( _this1->listen_z )) {
+HXLINE(  40)							_hx_tmp35 = !(_this1->ignore_listeners);
+            						}
+            						else {
+HXLINE(  40)							_hx_tmp35 = false;
+            						}
+HXDLIN(  40)						if (_hx_tmp35) {
+HXLINE(  40)							_this1->listen_z(_this1->z);
             						}
             					}
             				}
 HXLINE(  41)				{
-HXLINE(  41)					Float v3 = (p1->x * p1->x);
-HXDLIN(  41)					Float v4 = (v3 + (p1->y * p1->y));
-HXDLIN(  41)					Float v5 = ::Math_obj::sqrt((v4 + (p1->z * p1->z)));
-HXDLIN(  41)					if ((v5 != (int)0)) {
-HXLINE(  41)						Float _x2 = ((Float)p1->x / (Float)v5);
-HXDLIN(  41)						Float _y2 = ((Float)p1->y / (Float)v5);
-HXDLIN(  41)						Float _z2 = ((Float)p1->z / (Float)v5);
-HXDLIN(  41)						bool prev3 = p1->ignore_listeners;
-HXDLIN(  41)						p1->ignore_listeners = true;
+HXLINE(  41)					Float v6 = (p2->x * p2->x);
+HXDLIN(  41)					Float v7 = (v6 + (p2->y * p2->y));
+HXDLIN(  41)					Float v8 = ::Math_obj::sqrt((v7 + (p2->z * p2->z)));
+HXDLIN(  41)					if ((v8 != (int)0)) {
+HXLINE(  41)						Float _x4 = ((Float)p2->x / (Float)v8);
+HXDLIN(  41)						Float _y4 = ((Float)p2->y / (Float)v8);
+HXDLIN(  41)						Float _z4 = ((Float)p2->z / (Float)v8);
+HXDLIN(  41)						bool prev6 = p2->ignore_listeners;
+HXDLIN(  41)						p2->ignore_listeners = true;
 HXDLIN(  41)						{
-HXLINE(  41)							p1->x = _x2;
-HXDLIN(  41)							if (!(p1->_construct)) {
-HXLINE(  41)								bool _hx_tmp18;
-HXDLIN(  41)								if (hx::IsNotNull( p1->listen_x )) {
-HXLINE(  41)									_hx_tmp18 = !(p1->ignore_listeners);
+HXLINE(  41)							p2->x = _x4;
+HXDLIN(  41)							if (!(p2->_construct)) {
+HXLINE(  41)								bool _hx_tmp36;
+HXDLIN(  41)								if (hx::IsNotNull( p2->listen_x )) {
+HXLINE(  41)									_hx_tmp36 = !(p2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp18 = false;
+HXLINE(  41)									_hx_tmp36 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp18) {
-HXLINE(  41)									p1->listen_x(_x2);
+HXDLIN(  41)								if (_hx_tmp36) {
+HXLINE(  41)									p2->listen_x(_x4);
             								}
             							}
             						}
 HXDLIN(  41)						{
-HXLINE(  41)							p1->y = _y2;
-HXDLIN(  41)							if (!(p1->_construct)) {
-HXLINE(  41)								bool _hx_tmp19;
-HXDLIN(  41)								if (hx::IsNotNull( p1->listen_y )) {
-HXLINE(  41)									_hx_tmp19 = !(p1->ignore_listeners);
+HXLINE(  41)							p2->y = _y4;
+HXDLIN(  41)							if (!(p2->_construct)) {
+HXLINE(  41)								bool _hx_tmp37;
+HXDLIN(  41)								if (hx::IsNotNull( p2->listen_y )) {
+HXLINE(  41)									_hx_tmp37 = !(p2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp19 = false;
+HXLINE(  41)									_hx_tmp37 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp19) {
-HXLINE(  41)									p1->listen_y(_y2);
+HXDLIN(  41)								if (_hx_tmp37) {
+HXLINE(  41)									p2->listen_y(_y4);
             								}
             							}
             						}
 HXDLIN(  41)						{
-HXLINE(  41)							p1->z = _z2;
-HXDLIN(  41)							if (!(p1->_construct)) {
-HXLINE(  41)								bool _hx_tmp20;
-HXDLIN(  41)								if (hx::IsNotNull( p1->listen_z )) {
-HXLINE(  41)									_hx_tmp20 = !(p1->ignore_listeners);
+HXLINE(  41)							p2->z = _z4;
+HXDLIN(  41)							if (!(p2->_construct)) {
+HXLINE(  41)								bool _hx_tmp38;
+HXDLIN(  41)								if (hx::IsNotNull( p2->listen_z )) {
+HXLINE(  41)									_hx_tmp38 = !(p2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp20 = false;
+HXLINE(  41)									_hx_tmp38 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp20) {
-HXLINE(  41)									p1->listen_z(_z2);
+HXDLIN(  41)								if (_hx_tmp38) {
+HXLINE(  41)									p2->listen_z(_z4);
             								}
             							}
             						}
-HXDLIN(  41)						p1->ignore_listeners = prev3;
-HXDLIN(  41)						bool _hx_tmp21;
-HXDLIN(  41)						if (hx::IsNotNull( p1->listen_x )) {
-HXLINE(  41)							_hx_tmp21 = !(p1->ignore_listeners);
+HXDLIN(  41)						p2->ignore_listeners = prev6;
+HXDLIN(  41)						bool _hx_tmp39;
+HXDLIN(  41)						if (hx::IsNotNull( p2->listen_x )) {
+HXLINE(  41)							_hx_tmp39 = !(p2->ignore_listeners);
             						}
             						else {
-HXLINE(  41)							_hx_tmp21 = false;
+HXLINE(  41)							_hx_tmp39 = false;
             						}
-HXDLIN(  41)						if (_hx_tmp21) {
-HXLINE(  41)							p1->listen_x(p1->x);
+HXDLIN(  41)						if (_hx_tmp39) {
+HXLINE(  41)							p2->listen_x(p2->x);
             						}
-HXDLIN(  41)						bool _hx_tmp22;
-HXDLIN(  41)						if (hx::IsNotNull( p1->listen_y )) {
-HXLINE(  41)							_hx_tmp22 = !(p1->ignore_listeners);
-            						}
-            						else {
-HXLINE(  41)							_hx_tmp22 = false;
-            						}
-HXDLIN(  41)						if (_hx_tmp22) {
-HXLINE(  41)							p1->listen_y(p1->y);
-            						}
-HXDLIN(  41)						bool _hx_tmp23;
-HXDLIN(  41)						if (hx::IsNotNull( p1->listen_z )) {
-HXLINE(  41)							_hx_tmp23 = !(p1->ignore_listeners);
+HXDLIN(  41)						bool _hx_tmp40;
+HXDLIN(  41)						if (hx::IsNotNull( p2->listen_y )) {
+HXLINE(  41)							_hx_tmp40 = !(p2->ignore_listeners);
             						}
             						else {
-HXLINE(  41)							_hx_tmp23 = false;
+HXLINE(  41)							_hx_tmp40 = false;
             						}
-HXDLIN(  41)						if (_hx_tmp23) {
-HXLINE(  41)							p1->listen_z(p1->z);
+HXDLIN(  41)						if (_hx_tmp40) {
+HXLINE(  41)							p2->listen_y(p2->y);
+            						}
+HXDLIN(  41)						bool _hx_tmp41;
+HXDLIN(  41)						if (hx::IsNotNull( p2->listen_z )) {
+HXLINE(  41)							_hx_tmp41 = !(p2->ignore_listeners);
+            						}
+            						else {
+HXLINE(  41)							_hx_tmp41 = false;
+            						}
+HXDLIN(  41)						if (_hx_tmp41) {
+HXLINE(  41)							p2->listen_z(p2->z);
             						}
             					}
             					else {
-HXLINE(  41)						bool prev4 = p1->ignore_listeners;
-HXDLIN(  41)						p1->ignore_listeners = true;
+HXLINE(  41)						bool prev7 = p2->ignore_listeners;
+HXDLIN(  41)						p2->ignore_listeners = true;
 HXDLIN(  41)						{
-HXLINE(  41)							p1->x = (int)0;
-HXDLIN(  41)							if (!(p1->_construct)) {
-HXLINE(  41)								bool _hx_tmp24;
-HXDLIN(  41)								if (hx::IsNotNull( p1->listen_x )) {
-HXLINE(  41)									_hx_tmp24 = !(p1->ignore_listeners);
+HXLINE(  41)							p2->x = (int)0;
+HXDLIN(  41)							if (!(p2->_construct)) {
+HXLINE(  41)								bool _hx_tmp42;
+HXDLIN(  41)								if (hx::IsNotNull( p2->listen_x )) {
+HXLINE(  41)									_hx_tmp42 = !(p2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp24 = false;
+HXLINE(  41)									_hx_tmp42 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp24) {
-HXLINE(  41)									p1->listen_x((int)0);
+HXDLIN(  41)								if (_hx_tmp42) {
+HXLINE(  41)									p2->listen_x((int)0);
             								}
             							}
             						}
 HXDLIN(  41)						{
-HXLINE(  41)							p1->y = (int)0;
-HXDLIN(  41)							if (!(p1->_construct)) {
-HXLINE(  41)								bool _hx_tmp25;
-HXDLIN(  41)								if (hx::IsNotNull( p1->listen_y )) {
-HXLINE(  41)									_hx_tmp25 = !(p1->ignore_listeners);
+HXLINE(  41)							p2->y = (int)0;
+HXDLIN(  41)							if (!(p2->_construct)) {
+HXLINE(  41)								bool _hx_tmp43;
+HXDLIN(  41)								if (hx::IsNotNull( p2->listen_y )) {
+HXLINE(  41)									_hx_tmp43 = !(p2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp25 = false;
+HXLINE(  41)									_hx_tmp43 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp25) {
-HXLINE(  41)									p1->listen_y((int)0);
+HXDLIN(  41)								if (_hx_tmp43) {
+HXLINE(  41)									p2->listen_y((int)0);
             								}
             							}
             						}
 HXDLIN(  41)						{
-HXLINE(  41)							p1->z = (int)0;
-HXDLIN(  41)							if (!(p1->_construct)) {
-HXLINE(  41)								bool _hx_tmp26;
-HXDLIN(  41)								if (hx::IsNotNull( p1->listen_z )) {
-HXLINE(  41)									_hx_tmp26 = !(p1->ignore_listeners);
+HXLINE(  41)							p2->z = (int)0;
+HXDLIN(  41)							if (!(p2->_construct)) {
+HXLINE(  41)								bool _hx_tmp44;
+HXDLIN(  41)								if (hx::IsNotNull( p2->listen_z )) {
+HXLINE(  41)									_hx_tmp44 = !(p2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp26 = false;
+HXLINE(  41)									_hx_tmp44 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp26) {
-HXLINE(  41)									p1->listen_z((int)0);
+HXDLIN(  41)								if (_hx_tmp44) {
+HXLINE(  41)									p2->listen_z((int)0);
             								}
             							}
             						}
-HXDLIN(  41)						p1->ignore_listeners = prev4;
-HXDLIN(  41)						bool _hx_tmp27;
-HXDLIN(  41)						if (hx::IsNotNull( p1->listen_x )) {
-HXLINE(  41)							_hx_tmp27 = !(p1->ignore_listeners);
+HXDLIN(  41)						p2->ignore_listeners = prev7;
+HXDLIN(  41)						bool _hx_tmp45;
+HXDLIN(  41)						if (hx::IsNotNull( p2->listen_x )) {
+HXLINE(  41)							_hx_tmp45 = !(p2->ignore_listeners);
             						}
             						else {
-HXLINE(  41)							_hx_tmp27 = false;
+HXLINE(  41)							_hx_tmp45 = false;
             						}
-HXDLIN(  41)						if (_hx_tmp27) {
-HXLINE(  41)							p1->listen_x(p1->x);
+HXDLIN(  41)						if (_hx_tmp45) {
+HXLINE(  41)							p2->listen_x(p2->x);
             						}
-HXDLIN(  41)						bool _hx_tmp28;
-HXDLIN(  41)						if (hx::IsNotNull( p1->listen_y )) {
-HXLINE(  41)							_hx_tmp28 = !(p1->ignore_listeners);
-            						}
-            						else {
-HXLINE(  41)							_hx_tmp28 = false;
-            						}
-HXDLIN(  41)						if (_hx_tmp28) {
-HXLINE(  41)							p1->listen_y(p1->y);
-            						}
-HXDLIN(  41)						bool _hx_tmp29;
-HXDLIN(  41)						if (hx::IsNotNull( p1->listen_z )) {
-HXLINE(  41)							_hx_tmp29 = !(p1->ignore_listeners);
+HXDLIN(  41)						bool _hx_tmp46;
+HXDLIN(  41)						if (hx::IsNotNull( p2->listen_y )) {
+HXLINE(  41)							_hx_tmp46 = !(p2->ignore_listeners);
             						}
             						else {
-HXLINE(  41)							_hx_tmp29 = false;
+HXLINE(  41)							_hx_tmp46 = false;
             						}
-HXDLIN(  41)						if (_hx_tmp29) {
-HXLINE(  41)							p1->listen_z(p1->z);
+HXDLIN(  41)						if (_hx_tmp46) {
+HXLINE(  41)							p2->listen_y(p2->y);
+            						}
+HXDLIN(  41)						bool _hx_tmp47;
+HXDLIN(  41)						if (hx::IsNotNull( p2->listen_z )) {
+HXLINE(  41)							_hx_tmp47 = !(p2->ignore_listeners);
+            						}
+            						else {
+HXLINE(  41)							_hx_tmp47 = false;
+            						}
+HXDLIN(  41)						if (_hx_tmp47) {
+HXLINE(  41)							p2->listen_z(p2->z);
             						}
             					}
-HXDLIN(  41)					 ::phoenix::Vector _this1 = p1;
+HXDLIN(  41)					 ::phoenix::Vector _this2 = p2;
 HXDLIN(  41)					{
-HXLINE(  41)						Float _x3 = (_this1->x * radius);
-HXDLIN(  41)						Float _y3 = (_this1->y * radius);
-HXDLIN(  41)						Float _z3 = (_this1->z * radius);
-HXDLIN(  41)						bool prev5 = _this1->ignore_listeners;
-HXDLIN(  41)						_this1->ignore_listeners = true;
+HXLINE(  41)						Float _x5 = (_this2->x * inner_rad);
+HXDLIN(  41)						Float _y5 = (_this2->y * inner_rad);
+HXDLIN(  41)						Float _z5 = (_this2->z * inner_rad);
+HXDLIN(  41)						bool prev8 = _this2->ignore_listeners;
+HXDLIN(  41)						_this2->ignore_listeners = true;
 HXDLIN(  41)						{
-HXLINE(  41)							_this1->x = _x3;
-HXDLIN(  41)							if (!(_this1->_construct)) {
-HXLINE(  41)								bool _hx_tmp30;
-HXDLIN(  41)								if (hx::IsNotNull( _this1->listen_x )) {
-HXLINE(  41)									_hx_tmp30 = !(_this1->ignore_listeners);
+HXLINE(  41)							_this2->x = _x5;
+HXDLIN(  41)							if (!(_this2->_construct)) {
+HXLINE(  41)								bool _hx_tmp48;
+HXDLIN(  41)								if (hx::IsNotNull( _this2->listen_x )) {
+HXLINE(  41)									_hx_tmp48 = !(_this2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp30 = false;
+HXLINE(  41)									_hx_tmp48 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp30) {
-HXLINE(  41)									_this1->listen_x(_x3);
+HXDLIN(  41)								if (_hx_tmp48) {
+HXLINE(  41)									_this2->listen_x(_x5);
             								}
             							}
             						}
 HXDLIN(  41)						{
-HXLINE(  41)							_this1->y = _y3;
-HXDLIN(  41)							if (!(_this1->_construct)) {
-HXLINE(  41)								bool _hx_tmp31;
-HXDLIN(  41)								if (hx::IsNotNull( _this1->listen_y )) {
-HXLINE(  41)									_hx_tmp31 = !(_this1->ignore_listeners);
+HXLINE(  41)							_this2->y = _y5;
+HXDLIN(  41)							if (!(_this2->_construct)) {
+HXLINE(  41)								bool _hx_tmp49;
+HXDLIN(  41)								if (hx::IsNotNull( _this2->listen_y )) {
+HXLINE(  41)									_hx_tmp49 = !(_this2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp31 = false;
+HXLINE(  41)									_hx_tmp49 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp31) {
-HXLINE(  41)									_this1->listen_y(_y3);
+HXDLIN(  41)								if (_hx_tmp49) {
+HXLINE(  41)									_this2->listen_y(_y5);
             								}
             							}
             						}
 HXDLIN(  41)						{
-HXLINE(  41)							_this1->z = _z3;
-HXDLIN(  41)							if (!(_this1->_construct)) {
-HXLINE(  41)								bool _hx_tmp32;
-HXDLIN(  41)								if (hx::IsNotNull( _this1->listen_z )) {
-HXLINE(  41)									_hx_tmp32 = !(_this1->ignore_listeners);
+HXLINE(  41)							_this2->z = _z5;
+HXDLIN(  41)							if (!(_this2->_construct)) {
+HXLINE(  41)								bool _hx_tmp50;
+HXDLIN(  41)								if (hx::IsNotNull( _this2->listen_z )) {
+HXLINE(  41)									_hx_tmp50 = !(_this2->ignore_listeners);
             								}
             								else {
-HXLINE(  41)									_hx_tmp32 = false;
+HXLINE(  41)									_hx_tmp50 = false;
             								}
-HXDLIN(  41)								if (_hx_tmp32) {
-HXLINE(  41)									_this1->listen_z(_z3);
+HXDLIN(  41)								if (_hx_tmp50) {
+HXLINE(  41)									_this2->listen_z(_z5);
             								}
             							}
             						}
-HXDLIN(  41)						_this1->ignore_listeners = prev5;
-HXDLIN(  41)						bool _hx_tmp33;
-HXDLIN(  41)						if (hx::IsNotNull( _this1->listen_x )) {
-HXLINE(  41)							_hx_tmp33 = !(_this1->ignore_listeners);
+HXDLIN(  41)						_this2->ignore_listeners = prev8;
+HXDLIN(  41)						bool _hx_tmp51;
+HXDLIN(  41)						if (hx::IsNotNull( _this2->listen_x )) {
+HXLINE(  41)							_hx_tmp51 = !(_this2->ignore_listeners);
             						}
             						else {
-HXLINE(  41)							_hx_tmp33 = false;
+HXLINE(  41)							_hx_tmp51 = false;
             						}
-HXDLIN(  41)						if (_hx_tmp33) {
-HXLINE(  41)							_this1->listen_x(_this1->x);
+HXDLIN(  41)						if (_hx_tmp51) {
+HXLINE(  41)							_this2->listen_x(_this2->x);
             						}
-HXDLIN(  41)						bool _hx_tmp34;
-HXDLIN(  41)						if (hx::IsNotNull( _this1->listen_y )) {
-HXLINE(  41)							_hx_tmp34 = !(_this1->ignore_listeners);
-            						}
-            						else {
-HXLINE(  41)							_hx_tmp34 = false;
-            						}
-HXDLIN(  41)						if (_hx_tmp34) {
-HXLINE(  41)							_this1->listen_y(_this1->y);
-            						}
-HXDLIN(  41)						bool _hx_tmp35;
-HXDLIN(  41)						if (hx::IsNotNull( _this1->listen_z )) {
-HXLINE(  41)							_hx_tmp35 = !(_this1->ignore_listeners);
+HXDLIN(  41)						bool _hx_tmp52;
+HXDLIN(  41)						if (hx::IsNotNull( _this2->listen_y )) {
+HXLINE(  41)							_hx_tmp52 = !(_this2->ignore_listeners);
             						}
             						else {
-HXLINE(  41)							_hx_tmp35 = false;
+HXLINE(  41)							_hx_tmp52 = false;
             						}
-HXDLIN(  41)						if (_hx_tmp35) {
-HXLINE(  41)							_this1->listen_z(_this1->z);
+HXDLIN(  41)						if (_hx_tmp52) {
+HXLINE(  41)							_this2->listen_y(_this2->y);
+            						}
+HXDLIN(  41)						bool _hx_tmp53;
+HXDLIN(  41)						if (hx::IsNotNull( _this2->listen_z )) {
+HXLINE(  41)							_hx_tmp53 = !(_this2->ignore_listeners);
+            						}
+            						else {
+HXLINE(  41)							_hx_tmp53 = false;
+            						}
+HXDLIN(  41)						if (_hx_tmp53) {
+HXLINE(  41)							_this2->listen_z(_this2->z);
             						}
             					}
             				}
 HXLINE(  42)				{
-HXLINE(  42)					Float v6 = (p2->x * p2->x);
-HXDLIN(  42)					Float v7 = (v6 + (p2->y * p2->y));
-HXDLIN(  42)					Float v8 = ::Math_obj::sqrt((v7 + (p2->z * p2->z)));
-HXDLIN(  42)					if ((v8 != (int)0)) {
-HXLINE(  42)						Float _x4 = ((Float)p2->x / (Float)v8);
-HXDLIN(  42)						Float _y4 = ((Float)p2->y / (Float)v8);
-HXDLIN(  42)						Float _z4 = ((Float)p2->z / (Float)v8);
-HXDLIN(  42)						bool prev6 = p2->ignore_listeners;
-HXDLIN(  42)						p2->ignore_listeners = true;
+HXLINE(  42)					Float v9 = (p3->x * p3->x);
+HXDLIN(  42)					Float v10 = (v9 + (p3->y * p3->y));
+HXDLIN(  42)					Float v11 = ::Math_obj::sqrt((v10 + (p3->z * p3->z)));
+HXDLIN(  42)					if ((v11 != (int)0)) {
+HXLINE(  42)						Float _x6 = ((Float)p3->x / (Float)v11);
+HXDLIN(  42)						Float _y6 = ((Float)p3->y / (Float)v11);
+HXDLIN(  42)						Float _z6 = ((Float)p3->z / (Float)v11);
+HXDLIN(  42)						bool prev9 = p3->ignore_listeners;
+HXDLIN(  42)						p3->ignore_listeners = true;
 HXDLIN(  42)						{
-HXLINE(  42)							p2->x = _x4;
-HXDLIN(  42)							if (!(p2->_construct)) {
-HXLINE(  42)								bool _hx_tmp36;
-HXDLIN(  42)								if (hx::IsNotNull( p2->listen_x )) {
-HXLINE(  42)									_hx_tmp36 = !(p2->ignore_listeners);
+HXLINE(  42)							p3->x = _x6;
+HXDLIN(  42)							if (!(p3->_construct)) {
+HXLINE(  42)								bool _hx_tmp54;
+HXDLIN(  42)								if (hx::IsNotNull( p3->listen_x )) {
+HXLINE(  42)									_hx_tmp54 = !(p3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp36 = false;
+HXLINE(  42)									_hx_tmp54 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp36) {
-HXLINE(  42)									p2->listen_x(_x4);
+HXDLIN(  42)								if (_hx_tmp54) {
+HXLINE(  42)									p3->listen_x(_x6);
             								}
             							}
             						}
 HXDLIN(  42)						{
-HXLINE(  42)							p2->y = _y4;
-HXDLIN(  42)							if (!(p2->_construct)) {
-HXLINE(  42)								bool _hx_tmp37;
-HXDLIN(  42)								if (hx::IsNotNull( p2->listen_y )) {
-HXLINE(  42)									_hx_tmp37 = !(p2->ignore_listeners);
+HXLINE(  42)							p3->y = _y6;
+HXDLIN(  42)							if (!(p3->_construct)) {
+HXLINE(  42)								bool _hx_tmp55;
+HXDLIN(  42)								if (hx::IsNotNull( p3->listen_y )) {
+HXLINE(  42)									_hx_tmp55 = !(p3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp37 = false;
+HXLINE(  42)									_hx_tmp55 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp37) {
-HXLINE(  42)									p2->listen_y(_y4);
+HXDLIN(  42)								if (_hx_tmp55) {
+HXLINE(  42)									p3->listen_y(_y6);
             								}
             							}
             						}
 HXDLIN(  42)						{
-HXLINE(  42)							p2->z = _z4;
-HXDLIN(  42)							if (!(p2->_construct)) {
-HXLINE(  42)								bool _hx_tmp38;
-HXDLIN(  42)								if (hx::IsNotNull( p2->listen_z )) {
-HXLINE(  42)									_hx_tmp38 = !(p2->ignore_listeners);
+HXLINE(  42)							p3->z = _z6;
+HXDLIN(  42)							if (!(p3->_construct)) {
+HXLINE(  42)								bool _hx_tmp56;
+HXDLIN(  42)								if (hx::IsNotNull( p3->listen_z )) {
+HXLINE(  42)									_hx_tmp56 = !(p3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp38 = false;
+HXLINE(  42)									_hx_tmp56 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp38) {
-HXLINE(  42)									p2->listen_z(_z4);
+HXDLIN(  42)								if (_hx_tmp56) {
+HXLINE(  42)									p3->listen_z(_z6);
             								}
             							}
             						}
-HXDLIN(  42)						p2->ignore_listeners = prev6;
-HXDLIN(  42)						bool _hx_tmp39;
-HXDLIN(  42)						if (hx::IsNotNull( p2->listen_x )) {
-HXLINE(  42)							_hx_tmp39 = !(p2->ignore_listeners);
+HXDLIN(  42)						p3->ignore_listeners = prev9;
+HXDLIN(  42)						bool _hx_tmp57;
+HXDLIN(  42)						if (hx::IsNotNull( p3->listen_x )) {
+HXLINE(  42)							_hx_tmp57 = !(p3->ignore_listeners);
             						}
             						else {
-HXLINE(  42)							_hx_tmp39 = false;
+HXLINE(  42)							_hx_tmp57 = false;
             						}
-HXDLIN(  42)						if (_hx_tmp39) {
-HXLINE(  42)							p2->listen_x(p2->x);
+HXDLIN(  42)						if (_hx_tmp57) {
+HXLINE(  42)							p3->listen_x(p3->x);
             						}
-HXDLIN(  42)						bool _hx_tmp40;
-HXDLIN(  42)						if (hx::IsNotNull( p2->listen_y )) {
-HXLINE(  42)							_hx_tmp40 = !(p2->ignore_listeners);
-            						}
-            						else {
-HXLINE(  42)							_hx_tmp40 = false;
-            						}
-HXDLIN(  42)						if (_hx_tmp40) {
-HXLINE(  42)							p2->listen_y(p2->y);
-            						}
-HXDLIN(  42)						bool _hx_tmp41;
-HXDLIN(  42)						if (hx::IsNotNull( p2->listen_z )) {
-HXLINE(  42)							_hx_tmp41 = !(p2->ignore_listeners);
+HXDLIN(  42)						bool _hx_tmp58;
+HXDLIN(  42)						if (hx::IsNotNull( p3->listen_y )) {
+HXLINE(  42)							_hx_tmp58 = !(p3->ignore_listeners);
             						}
             						else {
-HXLINE(  42)							_hx_tmp41 = false;
+HXLINE(  42)							_hx_tmp58 = false;
             						}
-HXDLIN(  42)						if (_hx_tmp41) {
-HXLINE(  42)							p2->listen_z(p2->z);
+HXDLIN(  42)						if (_hx_tmp58) {
+HXLINE(  42)							p3->listen_y(p3->y);
+            						}
+HXDLIN(  42)						bool _hx_tmp59;
+HXDLIN(  42)						if (hx::IsNotNull( p3->listen_z )) {
+HXLINE(  42)							_hx_tmp59 = !(p3->ignore_listeners);
+            						}
+            						else {
+HXLINE(  42)							_hx_tmp59 = false;
+            						}
+HXDLIN(  42)						if (_hx_tmp59) {
+HXLINE(  42)							p3->listen_z(p3->z);
             						}
             					}
             					else {
-HXLINE(  42)						bool prev7 = p2->ignore_listeners;
-HXDLIN(  42)						p2->ignore_listeners = true;
+HXLINE(  42)						bool prev10 = p3->ignore_listeners;
+HXDLIN(  42)						p3->ignore_listeners = true;
 HXDLIN(  42)						{
-HXLINE(  42)							p2->x = (int)0;
-HXDLIN(  42)							if (!(p2->_construct)) {
-HXLINE(  42)								bool _hx_tmp42;
-HXDLIN(  42)								if (hx::IsNotNull( p2->listen_x )) {
-HXLINE(  42)									_hx_tmp42 = !(p2->ignore_listeners);
+HXLINE(  42)							p3->x = (int)0;
+HXDLIN(  42)							if (!(p3->_construct)) {
+HXLINE(  42)								bool _hx_tmp60;
+HXDLIN(  42)								if (hx::IsNotNull( p3->listen_x )) {
+HXLINE(  42)									_hx_tmp60 = !(p3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp42 = false;
+HXLINE(  42)									_hx_tmp60 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp42) {
-HXLINE(  42)									p2->listen_x((int)0);
+HXDLIN(  42)								if (_hx_tmp60) {
+HXLINE(  42)									p3->listen_x((int)0);
             								}
             							}
             						}
 HXDLIN(  42)						{
-HXLINE(  42)							p2->y = (int)0;
-HXDLIN(  42)							if (!(p2->_construct)) {
-HXLINE(  42)								bool _hx_tmp43;
-HXDLIN(  42)								if (hx::IsNotNull( p2->listen_y )) {
-HXLINE(  42)									_hx_tmp43 = !(p2->ignore_listeners);
+HXLINE(  42)							p3->y = (int)0;
+HXDLIN(  42)							if (!(p3->_construct)) {
+HXLINE(  42)								bool _hx_tmp61;
+HXDLIN(  42)								if (hx::IsNotNull( p3->listen_y )) {
+HXLINE(  42)									_hx_tmp61 = !(p3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp43 = false;
+HXLINE(  42)									_hx_tmp61 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp43) {
-HXLINE(  42)									p2->listen_y((int)0);
+HXDLIN(  42)								if (_hx_tmp61) {
+HXLINE(  42)									p3->listen_y((int)0);
             								}
             							}
             						}
 HXDLIN(  42)						{
-HXLINE(  42)							p2->z = (int)0;
-HXDLIN(  42)							if (!(p2->_construct)) {
-HXLINE(  42)								bool _hx_tmp44;
-HXDLIN(  42)								if (hx::IsNotNull( p2->listen_z )) {
-HXLINE(  42)									_hx_tmp44 = !(p2->ignore_listeners);
+HXLINE(  42)							p3->z = (int)0;
+HXDLIN(  42)							if (!(p3->_construct)) {
+HXLINE(  42)								bool _hx_tmp62;
+HXDLIN(  42)								if (hx::IsNotNull( p3->listen_z )) {
+HXLINE(  42)									_hx_tmp62 = !(p3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp44 = false;
+HXLINE(  42)									_hx_tmp62 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp44) {
-HXLINE(  42)									p2->listen_z((int)0);
+HXDLIN(  42)								if (_hx_tmp62) {
+HXLINE(  42)									p3->listen_z((int)0);
             								}
             							}
             						}
-HXDLIN(  42)						p2->ignore_listeners = prev7;
-HXDLIN(  42)						bool _hx_tmp45;
-HXDLIN(  42)						if (hx::IsNotNull( p2->listen_x )) {
-HXLINE(  42)							_hx_tmp45 = !(p2->ignore_listeners);
+HXDLIN(  42)						p3->ignore_listeners = prev10;
+HXDLIN(  42)						bool _hx_tmp63;
+HXDLIN(  42)						if (hx::IsNotNull( p3->listen_x )) {
+HXLINE(  42)							_hx_tmp63 = !(p3->ignore_listeners);
             						}
             						else {
-HXLINE(  42)							_hx_tmp45 = false;
+HXLINE(  42)							_hx_tmp63 = false;
             						}
-HXDLIN(  42)						if (_hx_tmp45) {
-HXLINE(  42)							p2->listen_x(p2->x);
+HXDLIN(  42)						if (_hx_tmp63) {
+HXLINE(  42)							p3->listen_x(p3->x);
             						}
-HXDLIN(  42)						bool _hx_tmp46;
-HXDLIN(  42)						if (hx::IsNotNull( p2->listen_y )) {
-HXLINE(  42)							_hx_tmp46 = !(p2->ignore_listeners);
-            						}
-            						else {
-HXLINE(  42)							_hx_tmp46 = false;
-            						}
-HXDLIN(  42)						if (_hx_tmp46) {
-HXLINE(  42)							p2->listen_y(p2->y);
-            						}
-HXDLIN(  42)						bool _hx_tmp47;
-HXDLIN(  42)						if (hx::IsNotNull( p2->listen_z )) {
-HXLINE(  42)							_hx_tmp47 = !(p2->ignore_listeners);
+HXDLIN(  42)						bool _hx_tmp64;
+HXDLIN(  42)						if (hx::IsNotNull( p3->listen_y )) {
+HXLINE(  42)							_hx_tmp64 = !(p3->ignore_listeners);
             						}
             						else {
-HXLINE(  42)							_hx_tmp47 = false;
+HXLINE(  42)							_hx_tmp64 = false;
             						}
-HXDLIN(  42)						if (_hx_tmp47) {
-HXLINE(  42)							p2->listen_z(p2->z);
+HXDLIN(  42)						if (_hx_tmp64) {
+HXLINE(  42)							p3->listen_y(p3->y);
+            						}
+HXDLIN(  42)						bool _hx_tmp65;
+HXDLIN(  42)						if (hx::IsNotNull( p3->listen_z )) {
+HXLINE(  42)							_hx_tmp65 = !(p3->ignore_listeners);
+            						}
+            						else {
+HXLINE(  42)							_hx_tmp65 = false;
+            						}
+HXDLIN(  42)						if (_hx_tmp65) {
+HXLINE(  42)							p3->listen_z(p3->z);
             						}
             					}
-HXDLIN(  42)					 ::phoenix::Vector _this2 = p2;
+HXDLIN(  42)					 ::phoenix::Vector _this3 = p3;
 HXDLIN(  42)					{
-HXLINE(  42)						Float _x5 = (_this2->x * inner_rad);
-HXDLIN(  42)						Float _y5 = (_this2->y * inner_rad);
-HXDLIN(  42)						Float _z5 = (_this2->z * inner_rad);
-HXDLIN(  42)						bool prev8 = _this2->ignore_listeners;
-HXDLIN(  42)						_this2->ignore_listeners = true;
+HXLINE(  42)						Float _x7 = (_this3->x * inner_rad);
+HXDLIN(  42)						Float _y7 = (_this3->y * inner_rad);
+HXDLIN(  42)						Float _z7 = (_this3->z * inner_rad);
+HXDLIN(  42)						bool prev11 = _this3->ignore_listeners;
+HXDLIN(  42)						_this3->ignore_listeners = true;
 HXDLIN(  42)						{
-HXLINE(  42)							_this2->x = _x5;
-HXDLIN(  42)							if (!(_this2->_construct)) {
-HXLINE(  42)								bool _hx_tmp48;
-HXDLIN(  42)								if (hx::IsNotNull( _this2->listen_x )) {
-HXLINE(  42)									_hx_tmp48 = !(_this2->ignore_listeners);
+HXLINE(  42)							_this3->x = _x7;
+HXDLIN(  42)							if (!(_this3->_construct)) {
+HXLINE(  42)								bool _hx_tmp66;
+HXDLIN(  42)								if (hx::IsNotNull( _this3->listen_x )) {
+HXLINE(  42)									_hx_tmp66 = !(_this3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp48 = false;
+HXLINE(  42)									_hx_tmp66 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp48) {
-HXLINE(  42)									_this2->listen_x(_x5);
+HXDLIN(  42)								if (_hx_tmp66) {
+HXLINE(  42)									_this3->listen_x(_x7);
             								}
             							}
             						}
 HXDLIN(  42)						{
-HXLINE(  42)							_this2->y = _y5;
-HXDLIN(  42)							if (!(_this2->_construct)) {
-HXLINE(  42)								bool _hx_tmp49;
-HXDLIN(  42)								if (hx::IsNotNull( _this2->listen_y )) {
-HXLINE(  42)									_hx_tmp49 = !(_this2->ignore_listeners);
+HXLINE(  42)							_this3->y = _y7;
+HXDLIN(  42)							if (!(_this3->_construct)) {
+HXLINE(  42)								bool _hx_tmp67;
+HXDLIN(  42)								if (hx::IsNotNull( _this3->listen_y )) {
+HXLINE(  42)									_hx_tmp67 = !(_this3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp49 = false;
+HXLINE(  42)									_hx_tmp67 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp49) {
-HXLINE(  42)									_this2->listen_y(_y5);
+HXDLIN(  42)								if (_hx_tmp67) {
+HXLINE(  42)									_this3->listen_y(_y7);
             								}
             							}
             						}
 HXDLIN(  42)						{
-HXLINE(  42)							_this2->z = _z5;
-HXDLIN(  42)							if (!(_this2->_construct)) {
-HXLINE(  42)								bool _hx_tmp50;
-HXDLIN(  42)								if (hx::IsNotNull( _this2->listen_z )) {
-HXLINE(  42)									_hx_tmp50 = !(_this2->ignore_listeners);
+HXLINE(  42)							_this3->z = _z7;
+HXDLIN(  42)							if (!(_this3->_construct)) {
+HXLINE(  42)								bool _hx_tmp68;
+HXDLIN(  42)								if (hx::IsNotNull( _this3->listen_z )) {
+HXLINE(  42)									_hx_tmp68 = !(_this3->ignore_listeners);
             								}
             								else {
-HXLINE(  42)									_hx_tmp50 = false;
+HXLINE(  42)									_hx_tmp68 = false;
             								}
-HXDLIN(  42)								if (_hx_tmp50) {
-HXLINE(  42)									_this2->listen_z(_z5);
+HXDLIN(  42)								if (_hx_tmp68) {
+HXLINE(  42)									_this3->listen_z(_z7);
             								}
             							}
             						}
-HXDLIN(  42)						_this2->ignore_listeners = prev8;
-HXDLIN(  42)						bool _hx_tmp51;
-HXDLIN(  42)						if (hx::IsNotNull( _this2->listen_x )) {
-HXLINE(  42)							_hx_tmp51 = !(_this2->ignore_listeners);
+HXDLIN(  42)						_this3->ignore_listeners = prev11;
+HXDLIN(  42)						bool _hx_tmp69;
+HXDLIN(  42)						if (hx::IsNotNull( _this3->listen_x )) {
+HXLINE(  42)							_hx_tmp69 = !(_this3->ignore_listeners);
             						}
             						else {
-HXLINE(  42)							_hx_tmp51 = false;
+HXLINE(  42)							_hx_tmp69 = false;
             						}
-HXDLIN(  42)						if (_hx_tmp51) {
-HXLINE(  42)							_this2->listen_x(_this2->x);
+HXDLIN(  42)						if (_hx_tmp69) {
+HXLINE(  42)							_this3->listen_x(_this3->x);
             						}
-HXDLIN(  42)						bool _hx_tmp52;
-HXDLIN(  42)						if (hx::IsNotNull( _this2->listen_y )) {
-HXLINE(  42)							_hx_tmp52 = !(_this2->ignore_listeners);
-            						}
-            						else {
-HXLINE(  42)							_hx_tmp52 = false;
-            						}
-HXDLIN(  42)						if (_hx_tmp52) {
-HXLINE(  42)							_this2->listen_y(_this2->y);
-            						}
-HXDLIN(  42)						bool _hx_tmp53;
-HXDLIN(  42)						if (hx::IsNotNull( _this2->listen_z )) {
-HXLINE(  42)							_hx_tmp53 = !(_this2->ignore_listeners);
+HXDLIN(  42)						bool _hx_tmp70;
+HXDLIN(  42)						if (hx::IsNotNull( _this3->listen_y )) {
+HXLINE(  42)							_hx_tmp70 = !(_this3->ignore_listeners);
             						}
             						else {
-HXLINE(  42)							_hx_tmp53 = false;
+HXLINE(  42)							_hx_tmp70 = false;
             						}
-HXDLIN(  42)						if (_hx_tmp53) {
-HXLINE(  42)							_this2->listen_z(_this2->z);
+HXDLIN(  42)						if (_hx_tmp70) {
+HXLINE(  42)							_this3->listen_y(_this3->y);
+            						}
+HXDLIN(  42)						bool _hx_tmp71;
+HXDLIN(  42)						if (hx::IsNotNull( _this3->listen_z )) {
+HXLINE(  42)							_hx_tmp71 = !(_this3->ignore_listeners);
+            						}
+            						else {
+HXLINE(  42)							_hx_tmp71 = false;
+            						}
+HXDLIN(  42)						if (_hx_tmp71) {
+HXLINE(  42)							_this3->listen_z(_this3->z);
             						}
             					}
             				}
-HXLINE(  43)				{
-HXLINE(  43)					Float v9 = (p3->x * p3->x);
-HXDLIN(  43)					Float v10 = (v9 + (p3->y * p3->y));
-HXDLIN(  43)					Float v11 = ::Math_obj::sqrt((v10 + (p3->z * p3->z)));
-HXDLIN(  43)					if ((v11 != (int)0)) {
-HXLINE(  43)						Float _x6 = ((Float)p3->x / (Float)v11);
-HXDLIN(  43)						Float _y6 = ((Float)p3->y / (Float)v11);
-HXDLIN(  43)						Float _z6 = ((Float)p3->z / (Float)v11);
-HXDLIN(  43)						bool prev9 = p3->ignore_listeners;
-HXDLIN(  43)						p3->ignore_listeners = true;
-HXDLIN(  43)						{
-HXLINE(  43)							p3->x = _x6;
-HXDLIN(  43)							if (!(p3->_construct)) {
-HXLINE(  43)								bool _hx_tmp54;
-HXDLIN(  43)								if (hx::IsNotNull( p3->listen_x )) {
-HXLINE(  43)									_hx_tmp54 = !(p3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp54 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp54) {
-HXLINE(  43)									p3->listen_x(_x6);
-            								}
-            							}
-            						}
-HXDLIN(  43)						{
-HXLINE(  43)							p3->y = _y6;
-HXDLIN(  43)							if (!(p3->_construct)) {
-HXLINE(  43)								bool _hx_tmp55;
-HXDLIN(  43)								if (hx::IsNotNull( p3->listen_y )) {
-HXLINE(  43)									_hx_tmp55 = !(p3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp55 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp55) {
-HXLINE(  43)									p3->listen_y(_y6);
-            								}
-            							}
-            						}
-HXDLIN(  43)						{
-HXLINE(  43)							p3->z = _z6;
-HXDLIN(  43)							if (!(p3->_construct)) {
-HXLINE(  43)								bool _hx_tmp56;
-HXDLIN(  43)								if (hx::IsNotNull( p3->listen_z )) {
-HXLINE(  43)									_hx_tmp56 = !(p3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp56 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp56) {
-HXLINE(  43)									p3->listen_z(_z6);
-            								}
-            							}
-            						}
-HXDLIN(  43)						p3->ignore_listeners = prev9;
-HXDLIN(  43)						bool _hx_tmp57;
-HXDLIN(  43)						if (hx::IsNotNull( p3->listen_x )) {
-HXLINE(  43)							_hx_tmp57 = !(p3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp57 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp57) {
-HXLINE(  43)							p3->listen_x(p3->x);
-            						}
-HXDLIN(  43)						bool _hx_tmp58;
-HXDLIN(  43)						if (hx::IsNotNull( p3->listen_y )) {
-HXLINE(  43)							_hx_tmp58 = !(p3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp58 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp58) {
-HXLINE(  43)							p3->listen_y(p3->y);
-            						}
-HXDLIN(  43)						bool _hx_tmp59;
-HXDLIN(  43)						if (hx::IsNotNull( p3->listen_z )) {
-HXLINE(  43)							_hx_tmp59 = !(p3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp59 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp59) {
-HXLINE(  43)							p3->listen_z(p3->z);
-            						}
-            					}
-            					else {
-HXLINE(  43)						bool prev10 = p3->ignore_listeners;
-HXDLIN(  43)						p3->ignore_listeners = true;
-HXDLIN(  43)						{
-HXLINE(  43)							p3->x = (int)0;
-HXDLIN(  43)							if (!(p3->_construct)) {
-HXLINE(  43)								bool _hx_tmp60;
-HXDLIN(  43)								if (hx::IsNotNull( p3->listen_x )) {
-HXLINE(  43)									_hx_tmp60 = !(p3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp60 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp60) {
-HXLINE(  43)									p3->listen_x((int)0);
-            								}
-            							}
-            						}
-HXDLIN(  43)						{
-HXLINE(  43)							p3->y = (int)0;
-HXDLIN(  43)							if (!(p3->_construct)) {
-HXLINE(  43)								bool _hx_tmp61;
-HXDLIN(  43)								if (hx::IsNotNull( p3->listen_y )) {
-HXLINE(  43)									_hx_tmp61 = !(p3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp61 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp61) {
-HXLINE(  43)									p3->listen_y((int)0);
-            								}
-            							}
-            						}
-HXDLIN(  43)						{
-HXLINE(  43)							p3->z = (int)0;
-HXDLIN(  43)							if (!(p3->_construct)) {
-HXLINE(  43)								bool _hx_tmp62;
-HXDLIN(  43)								if (hx::IsNotNull( p3->listen_z )) {
-HXLINE(  43)									_hx_tmp62 = !(p3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp62 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp62) {
-HXLINE(  43)									p3->listen_z((int)0);
-            								}
-            							}
-            						}
-HXDLIN(  43)						p3->ignore_listeners = prev10;
-HXDLIN(  43)						bool _hx_tmp63;
-HXDLIN(  43)						if (hx::IsNotNull( p3->listen_x )) {
-HXLINE(  43)							_hx_tmp63 = !(p3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp63 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp63) {
-HXLINE(  43)							p3->listen_x(p3->x);
-            						}
-HXDLIN(  43)						bool _hx_tmp64;
-HXDLIN(  43)						if (hx::IsNotNull( p3->listen_y )) {
-HXLINE(  43)							_hx_tmp64 = !(p3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp64 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp64) {
-HXLINE(  43)							p3->listen_y(p3->y);
-            						}
-HXDLIN(  43)						bool _hx_tmp65;
-HXDLIN(  43)						if (hx::IsNotNull( p3->listen_z )) {
-HXLINE(  43)							_hx_tmp65 = !(p3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp65 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp65) {
-HXLINE(  43)							p3->listen_z(p3->z);
-            						}
-            					}
-HXDLIN(  43)					 ::phoenix::Vector _this3 = p3;
-HXDLIN(  43)					{
-HXLINE(  43)						Float _x7 = (_this3->x * inner_rad);
-HXDLIN(  43)						Float _y7 = (_this3->y * inner_rad);
-HXDLIN(  43)						Float _z7 = (_this3->z * inner_rad);
-HXDLIN(  43)						bool prev11 = _this3->ignore_listeners;
-HXDLIN(  43)						_this3->ignore_listeners = true;
-HXDLIN(  43)						{
-HXLINE(  43)							_this3->x = _x7;
-HXDLIN(  43)							if (!(_this3->_construct)) {
-HXLINE(  43)								bool _hx_tmp66;
-HXDLIN(  43)								if (hx::IsNotNull( _this3->listen_x )) {
-HXLINE(  43)									_hx_tmp66 = !(_this3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp66 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp66) {
-HXLINE(  43)									_this3->listen_x(_x7);
-            								}
-            							}
-            						}
-HXDLIN(  43)						{
-HXLINE(  43)							_this3->y = _y7;
-HXDLIN(  43)							if (!(_this3->_construct)) {
-HXLINE(  43)								bool _hx_tmp67;
-HXDLIN(  43)								if (hx::IsNotNull( _this3->listen_y )) {
-HXLINE(  43)									_hx_tmp67 = !(_this3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp67 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp67) {
-HXLINE(  43)									_this3->listen_y(_y7);
-            								}
-            							}
-            						}
-HXDLIN(  43)						{
-HXLINE(  43)							_this3->z = _z7;
-HXDLIN(  43)							if (!(_this3->_construct)) {
-HXLINE(  43)								bool _hx_tmp68;
-HXDLIN(  43)								if (hx::IsNotNull( _this3->listen_z )) {
-HXLINE(  43)									_hx_tmp68 = !(_this3->ignore_listeners);
-            								}
-            								else {
-HXLINE(  43)									_hx_tmp68 = false;
-            								}
-HXDLIN(  43)								if (_hx_tmp68) {
-HXLINE(  43)									_this3->listen_z(_z7);
-            								}
-            							}
-            						}
-HXDLIN(  43)						_this3->ignore_listeners = prev11;
-HXDLIN(  43)						bool _hx_tmp69;
-HXDLIN(  43)						if (hx::IsNotNull( _this3->listen_x )) {
-HXLINE(  43)							_hx_tmp69 = !(_this3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp69 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp69) {
-HXLINE(  43)							_this3->listen_x(_this3->x);
-            						}
-HXDLIN(  43)						bool _hx_tmp70;
-HXDLIN(  43)						if (hx::IsNotNull( _this3->listen_y )) {
-HXLINE(  43)							_hx_tmp70 = !(_this3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp70 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp70) {
-HXLINE(  43)							_this3->listen_y(_this3->y);
-            						}
-HXDLIN(  43)						bool _hx_tmp71;
-HXDLIN(  43)						if (hx::IsNotNull( _this3->listen_z )) {
-HXLINE(  43)							_hx_tmp71 = !(_this3->ignore_listeners);
-            						}
-            						else {
-HXLINE(  43)							_hx_tmp71 = false;
-            						}
-HXDLIN(  43)						if (_hx_tmp71) {
-HXLINE(  43)							_this3->listen_z(_this3->z);
-            						}
-            					}
-            				}
-HXLINE(  45)				 ::phoenix::geometry::Geometry _hx_tmp72 = this->geometry;
-HXDLIN(  45)				_hx_tmp72->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p0,null(),null()));
-HXLINE(  46)				 ::phoenix::geometry::Geometry _hx_tmp73 = this->geometry;
-HXDLIN(  46)				_hx_tmp73->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p1,null(),null()));
-HXLINE(  47)				 ::phoenix::geometry::Geometry _hx_tmp74 = this->geometry;
-HXDLIN(  47)				_hx_tmp74->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p2,null(),null()));
-HXLINE(  49)				 ::phoenix::geometry::Geometry _hx_tmp75 = this->geometry;
-HXDLIN(  49)				_hx_tmp75->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p2,null(),null()));
-HXLINE(  50)				 ::phoenix::geometry::Geometry _hx_tmp76 = this->geometry;
-HXDLIN(  50)				_hx_tmp76->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p1,null(),null()));
-HXLINE(  51)				 ::phoenix::geometry::Geometry _hx_tmp77 = this->geometry;
-HXDLIN(  51)				_hx_tmp77->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p3,null(),null()));
+HXLINE(  44)				 ::phoenix::geometry::Geometry _hx_tmp72 = this->geometry;
+HXDLIN(  44)				_hx_tmp72->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p0,null(),null()));
+HXLINE(  45)				 ::phoenix::geometry::Geometry _hx_tmp73 = this->geometry;
+HXDLIN(  45)				_hx_tmp73->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p1,null(),null()));
+HXLINE(  46)				 ::phoenix::geometry::Geometry _hx_tmp74 = this->geometry;
+HXDLIN(  46)				_hx_tmp74->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p2,null(),null()));
+HXLINE(  48)				 ::phoenix::geometry::Geometry _hx_tmp75 = this->geometry;
+HXDLIN(  48)				_hx_tmp75->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p2,null(),null()));
+HXLINE(  49)				 ::phoenix::geometry::Geometry _hx_tmp76 = this->geometry;
+HXDLIN(  49)				_hx_tmp76->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p1,null(),null()));
+HXLINE(  50)				 ::phoenix::geometry::Geometry _hx_tmp77 = this->geometry;
+HXDLIN(  50)				_hx_tmp77->add( ::phoenix::geometry::Vertex_obj::__alloc( HX_CTX ,p3,null(),null()));
             			}
             		}
-HXLINE(  55)		this->set_color( ::phoenix::Color_obj::__alloc( HX_CTX ,(int)1,(int)1,(int)1,(int)1));
+HXLINE(  54)		this->set_color( ::phoenix::Color_obj::__alloc( HX_CTX ,(int)1,(int)1,(int)1,(int)1));
             	}
 
 
 void Swinger_obj::update(Float dt){
-            	HX_STACKFRAME(&_hx_pos_0918f0feda7df168_58_update)
+            	HX_STACKFRAME(&_hx_pos_0918f0feda7df168_57_update)
             	}
 
 
