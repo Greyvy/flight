@@ -1,6 +1,0 @@
---macro snow.Set.main("luxe.Engine")
---macro snow.Set.ident("com.luxeengine.flight")
-
---macro snow.Set.config("config.json")
-
-
