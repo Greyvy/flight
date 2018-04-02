@@ -40,24 +40,16 @@ class Main extends luxe.Game {
 
     }
 
-    var player  : Player;
-    var swinger : Swinger;
-    var walls   : Array<Array<Float>>;
+    var player         : Player;
+    var swingr         : Swinger;
+    var walls          : Array<Array<Float>>;
     var wall_colliders : Array<Shape> = [];
 
     override function ready() {
         player = new Player({ name: 'Player', pos: Luxe.screen.mid });
-        swinger = new Swinger({ name: 'Swinger', pos: new Vec(120, 80) });
+        swingr = new Swinger({ name: 'Swinger', pos: new Vec(120, 80) });
 
         Luxe.camera.size = new Vec(width, height);
-        Luxe.camera.shake(12);
-
-        // walls = [
-        //     [-1, 0, Luxe.screen.w + 2, 30],
-        //     [-1, 30, 30, Luxe.screen.h - 60],
-        //     [-1, Luxe.screen.h - 30, Luxe.screen.w + 2, 30],
-        //     [Luxe.screen.w - 29, 30, 30, Luxe.screen.h - 60]
-        // ];
 
         walls = [
             [
