@@ -33,7 +33,7 @@ class Swinger extends Visual {
         Actuate.defaultEase = luxe.tween.easing.Sine.easeInOut;
         Actuate.update(tweenSwing, 1,
                 [arm0[1].angle2D, arm1[1].angle2D],
-                [target.angle2D, -target.angle2D])
+                [target.angle2D, target.angle2D])
             .repeat()
             .reflect();
 
