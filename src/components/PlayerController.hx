@@ -7,6 +7,8 @@ import luxe.Visual;
 import luxe.Color;
 import luxe.tween.Actuate;
 
+// @NOTE(Grey): Some example projects that may or may not be useful
+// https://github.com/Rostiger/Luxe_Projects
 
 class PlayerController extends Component {
 

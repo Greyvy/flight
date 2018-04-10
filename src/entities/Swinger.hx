@@ -45,6 +45,10 @@ class Swinger extends Visual {
     }
 
     function circle(pos:Vec, radius:Int, ?sides:Int = 32) {
+
+        // @NOTE(Grey): Inspiration for this approach largely take from this gist:
+        // https://gist.github.com/le-doux/d9ac94af66c2b9a86238
+
         var piece = tau / sides;
         var inner_rad = radius - thickness;
 
